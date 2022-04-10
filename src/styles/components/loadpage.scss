@@ -1,0 +1,16 @@
+.loadpage{
+  @extend %center;
+	@extend %cover;
+  
+  background: $color-gray-white;
+  transform: translateY(100%);
+  z-index: z('loadpage');
+}
+
+.loadpage__text{
+  color: $color-purple;
+  font-family: $font-italiana;
+  font-size: 9rem;
+  text-align: center;
+  width: 90rem;
+}

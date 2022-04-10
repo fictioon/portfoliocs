@@ -1,0 +1,107 @@
+.section__bio{
+  height: 116.4rem;
+  width: 100%;
+  position: relative;
+  
+  @include media('<tablet'){
+    height: auto;
+  }
+}
+
+.section__bio__wrapper{
+  display: flex;
+
+  @include media('<tablet'){
+    flex-direction:column-reverse;
+  }
+
+  .section__bio__portrait{
+    position: absolute;
+    right: 20rem;
+    top:0;
+
+    @include media('<tablet'){
+      margin-top: 8rem;
+      position: static;
+      width: 100%;
+    }
+  }
+
+  .section__bio__description{
+    bottom: 9rem;
+    height: 84rem;
+    left: 10rem;
+    position: absolute;
+    width: 54rem;
+
+    @include media('<tablet'){
+      height: auto;
+      margin: 8rem 5rem 0 5rem;
+      position: static;
+    }
+
+    .section__bio__description__wrapper{
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+
+.section__bio__text{
+  font-size: 3.5rem;
+  letter-spacing: .5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.section__bio__logo{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+
+  @include media('<tablet'){
+    position: static;
+    margin: 10rem 21.5rem 5rem;
+  }
+
+  .section__bio__logo__media{
+    height: 30rem;
+    width: 30rem;
+    position: relative;
+    mix-blend-mode: difference;
+
+    @include media('<tablet'){
+      height: 20rem;
+      width: 20rem;
+    }
+
+    .section__bio__logo__image{
+      @extend %cover;
+
+      object-fit: cover;
+    }
+  }
+}
+
+.section__bio__media{
+  height: 116.4rem;
+  width: 97.4rem;
+  position: relative;
+
+  @include media('<tablet'){
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .section__bio__image{
+    @extend %cover;
+
+    object-fit: cover;
+
+    @include media('<tablet'){
+      position: static;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.section__photo{
+  width: 100%;
+}
+
+.section__photo__wrapper{
+  .section__photo__media{
+    height: 104rem;
+    width: 100%;
+    position: relative;
+
+    @include media('<tablet'){
+      height: auto
+    }
+
+    .section__photo__image{
+      @extend %cover;
+
+      object-fit: cover;
+
+      @include media('<tablet'){
+        position: static;
+      }
+    }
+  }
+}

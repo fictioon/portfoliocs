@@ -1,0 +1,79 @@
+.section__experience{
+  position: relative;
+  padding: 10rem 8rem 25rem;
+
+  @include media('<tablet'){
+    padding: 5rem 5rem 15rem;
+  }
+}
+
+.section__experience__wrapper{
+
+  .section__experience__title{
+    font-family: $font-italiana;
+    font-size: 12rem;
+    text-transform: uppercase;
+
+    @include media('<tablet'){
+      font-size: 8rem;
+    }
+  }
+}
+
+.section__experience__companies{
+  margin-top: 10rem;
+  text-transform: uppercase;
+
+  .experience__company{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 10rem;
+
+    @include media('<tablet'){
+      padding: 4rem 0;
+    }
+
+    .company__info{
+      @include media('<tablet'){
+        padding-right: 2rem;
+      }
+      .company__name{
+        font-size: 4rem;
+      }
+      .company__positions{
+        color: $color-gray-medium;
+        font-size: 2.5rem;
+      }
+    }
+
+    .company__duration{
+      align-items: center;
+      display: flex;
+      font-family: $font-italiana;
+      margin-bottom: 2rem;
+
+      @include media('<tablet'){
+        justify-content:flex-end;
+        width: 24rem;
+      }
+
+      .duration__number{
+        font-size: 14.3rem;
+        margin-right: 1rem;
+
+        @include media('<tablet'){
+          font-size: 8rem;
+        }
+      }
+      .duration__year{
+        font-size: 6rem;
+        margin-top: 2rem;
+
+        @include media('<tablet'){
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+}

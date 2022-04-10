@@ -1,0 +1,74 @@
+.section__skills{
+  position: relative;
+  padding: 12rem 8rem;
+
+  @include media('<tablet'){
+    padding: 10rem 5rem;
+  }
+}
+
+.section__skills__wrapper{
+
+  .section__skills__title{
+    font-family: $font-italiana;
+    font-size: 12rem;
+    text-transform: uppercase;
+
+    @include media('<tablet'){
+      font-size: 8rem;
+    }
+  }
+}
+
+.section__skills__content{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rem;
+
+  @include media('<tablet'){
+    flex-direction: column;
+  }
+
+  .section__skills__devdes{
+    text-transform: uppercase;
+
+    .section__skills__devdes__item{
+      display: flex;
+
+      &:nth-child(2){
+        margin-top: 10rem;
+      }
+
+      .skill__title{
+        font-size: 2.5rem;
+        margin-right: 6.4rem;
+        margin-top: 1rem;
+        text-align: right;
+        width: 25rem;
+
+        @include media('<tablet'){
+          width: 13rem;
+        }
+      }
+
+      .skill__items{
+        font-size: 4rem;
+        letter-spacing: .5rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .section__skill__description{
+    color: $color-gray-medium;
+    font-size: 2.5rem;
+    line-height: 1.8;
+    letter-spacing: .3rem;
+    width: 62.7rem;
+
+    @include media('<tablet'){
+      margin-top: 10rem;
+      width: 100%;
+    }
+  }
+}

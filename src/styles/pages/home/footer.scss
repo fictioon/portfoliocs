@@ -1,0 +1,99 @@
+.footer__contact{
+  width: 100%;
+}
+
+.footer__contact__wrapper{
+  padding: 10rem 8rem;
+
+  @include media('<tablet'){
+    padding: 0 5rem;
+  }
+}
+
+.footer__contact__main{
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25rem;
+
+  @include media('<tablet'){
+    flex-direction: column;
+    margin-bottom: 10rem;
+  }
+
+  .footer__contact__logo{
+    .footer__contact__logo__media{
+      height: 30rem;
+      width: 30rem;
+      position: relative;
+
+      @include media('<tablet'){
+        height: 20rem;
+        margin-bottom: 5rem;
+        width: 20rem;
+      }
+
+      .footer__contact__logo__image{
+        @extend %cover;
+
+        object-fit: cover;
+      }
+    }
+  }
+
+  .footer__contact__advice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer__contact__text{
+      font-family: $font-italiana;
+      font-size: 24rem;
+      line-height: .8;
+      text-align: right;
+
+      @include media('<tablet'){
+        font-size: 12rem;
+      }
+
+      span span {
+        height: 23rem;
+
+        @include media('<tablet'){
+          height: 12rem;
+        }
+      }
+    }
+    .footer__contact__label{
+      font-size: 10rem;
+      font-weight: 300;
+      margin-top: 10rem;
+      text-transform: uppercase;
+
+      @include media('<tablet'){
+        font-size: 7rem;
+        margin-top: 5rem;
+      }
+    }
+  }
+}
+
+.footer__contact__networks{
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: $color-blue;
+
+  @include media('<tablet'){
+    padding-bottom: 20rem;
+  }
+
+  .footer__contact__items{
+    display: flex;
+
+    .footer__network{
+      margin-right: 3rem;
+    }
+  }
+}

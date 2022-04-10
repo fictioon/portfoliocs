@@ -1,0 +1,33 @@
+@import './base/reset';
+
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
+@import './utils/responsive';
+
+@import './shared/pages';
+
+@import './base/fonts';
+@import './base/base';
+
+@import './components/preloader';
+@import './components/loadpage';
+
+@import './layout/navigation';
+
+@import './pages/home/home';
+@import './pages/home/header';
+@import './pages/home/bio';
+@import './pages/home/description';
+@import './pages/home/projects';
+@import './pages/home/footer';
+
+@import './pages/about/about';
+@import './pages/about/header';
+@import './pages/about/skills';
+@import './pages/about/experience';
+@import './pages/about/photo';
+@import './pages/about/moreinfo';
+@import './pages/about/footer';
+
+
