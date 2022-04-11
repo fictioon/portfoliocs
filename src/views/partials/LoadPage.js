@@ -1,8 +1,12 @@
-const LoadPage = () => {
+const loadPageView = () => {
   const view = `
-    <div>LoadPage</div>
+    <div class="loadpage__wrapper">
+      <div class="loadpage__text">
+        <p class="loadpage__phrase">Me gusta comer.</p>
+      </div>
+    </div>
   `
   return view
 }
 
-export default LoadPage
+export default loadPageView()

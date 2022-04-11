@@ -24,7 +24,14 @@ export default class Router {
             return
           }
         }
+        this.error404(routes[0])
       }
     }
+  }
+
+  error404(route) {
+    history.pushState({}, '', '/')
+    route.action()
+    return
   }
 }

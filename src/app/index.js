@@ -3,6 +3,10 @@ import Router from '../Router'
 import NormalizeWheel from 'normalize-wheel'
 import each from 'lodash/each'
 
+import preloaderView from '../views/partials/Preloader'
+import navigationView from '../views/partials/Navigation'
+import loadPageView from '../views/partials/LoadPage'
+
 import homeView from '../views/pages/Home'
 import aboutView from '../views/pages/About'
 import error404View from '../views/pages/Error404'
@@ -25,6 +29,7 @@ class App {
     this.sizes = new Sizes()
 
     this.createRoutes()
+    this.createPartials()
     this.createExperience()
 
     this.createPreloader()
@@ -55,10 +60,39 @@ class App {
         action: () => {
           this.createContent({ template: 'about' })
         }
+      },
+      {
+        path: '404',
+        action: () => {
+          this.createContent({ template: '404' })
+        }
       }
     ]
 
     this.router = new Router(this.routes)
+  }
+
+  async createPartials() {
+    this.partials = [
+      {
+        name: 'preloader',
+        view: preloaderView
+      },
+      {
+        name: 'navigation',
+        view: navigationView
+      },
+      {
+        name: 'loadpage',
+        view: loadPageView
+      }
+    ]
+
+    await each(this.partials, (partial) => {
+      const html = partial.view
+      const content = document.querySelector(`.${partial.name}`)
+      content.innerHTML = html
+    })
   }
 
   async createContent({ template }) {
