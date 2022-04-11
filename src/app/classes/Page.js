@@ -1,7 +1,8 @@
 import each from 'lodash/each'
-import {gsap, Power1} from 'gsap'
+import { gsap, Power1 } from 'gsap'
 
 import Scroll from '../utils/Scroll'
+import Touch from '../utils/Touch'
 import Title from '../animations/Title'
 import Paragraph from '../animations/Paragraph'
 import Background from '../animations/Background'
@@ -21,13 +22,8 @@ export default class Page {
     this.backgroundElement = document.querySelector('.section__description')
     this.lineElements = document.querySelectorAll('.section__line')
 
-    this.createScroll();
-
-		this.y = {
-			start: 0,
-			distance: 0,
-			end: 0
-		}
+    this.createScroll()
+    this.createTouch()
   }
 
   createScroll() {
@@ -36,65 +32,73 @@ export default class Page {
     })
   }
 
+  createTouch() {
+    this.touch = new Touch()
+  }
+
   loaded({ delay }) {
     this.show(delay)
 
     if (this.backgroundElement) {
-      new Background(this.backgroundElement, 0, "-25%")
+      new Background(this.backgroundElement, 0, '-25%')
     }
 
     if (this.paragraphLargeElements) {
-      each(this.paragraphLargeElements, large => {
-        new Opacity(large, .3)
+      each(this.paragraphLargeElements, (large) => {
+        new Opacity(large, 0.3)
       })
     }
 
-    each(this.lineElements, line => {
+    each(this.lineElements, (line) => {
       new Line(line, 0)
     })
 
-    each(this.titleElements, title => {
+    each(this.titleElements, (title) => {
       new Title(title, delay)
     })
 
-    each(this.titleInnerElements, title => {
-      new Title(title, .3)
+    each(this.titleInnerElements, (title) => {
+      new Title(title, 0.3)
     })
 
-    each(this.paragraphElements, paragraph => {
+    each(this.paragraphElements, (paragraph) => {
       new Paragraph(paragraph, delay)
     })
 
-    each(this.paragraphInnerElements, paragraph => {
-      new Paragraph(paragraph, .3)
+    each(this.paragraphInnerElements, (paragraph) => {
+      new Paragraph(paragraph, 0.3)
     })
   }
 
   show(delay) {
-    gsap.fromTo([this.container, window.experience.canvas],
-    {
-      y: '30%',
-      opacity: 0
-    },
-    {
-      delay: delay,
-      duration: .8,
-      ease: Power1.easeOut,
-      y: '0%',
-      opacity: 1
-    })
+    gsap.fromTo(
+      [this.container, window.experience.canvas],
+      {
+        y: '30%',
+        opacity: 0
+      },
+      {
+        delay: delay,
+        duration: 0.8,
+        ease: Power1.easeOut,
+        y: '0%',
+        opacity: 1
+      }
+    )
   }
 
   hide() {
-    gsap.fromTo([this.container, window.experience.canvas],
-    {
-      y: '0%',
-    },
-    {
-      duration: 1.3,
-      ease: Power1.easeOut,
-      y: '-20%',
-    })
+    gsap.fromTo(
+      [this.container, window.experience.canvas],
+      {
+        y: '0%'
+      },
+      {
+        duration: 1.3,
+        ease: Power1.easeOut,
+        y: '-20%'
+      }
+    )
   }
 
   wheel(event) {
@@ -102,38 +106,19 @@ export default class Page {
   }
 
   touchDown(event) {
-    this.isDown = true
-    
-    this.y.start = event.touches
-      ? event.touches[0].clientY
-      : event.clientY
-	}
-	touchMove(event) {
-		if (!this.isDown) return
-
-    const y = event.touches
-      ? event.touches[0].clientY
-      : event.clientY
-    
-    this.y.end = y
-
-    const yDistance = this.y.start - this.y.end
-    this.scroll.touchMove(yDistance*0.1)
-
-	}
-	touchUp(event) {
-		this.isDown = false
-
-		const y = event.changedTouches
-			? event.changedTouches[0].clientY
-			: event.clientY
-
-		this.y.end = y
-	}
-
-  resize() {
-    
+    this.touch.touchDown(event)
+    this.scroll.touchDown()
   }
+  touchMove(event) {
+    this.touch.touchMove(event)
+    this.scroll.touchMove(this.touch.yDistance)
+  }
+  touchUp(event) {
+    this.touch.touchUp(event)
+    this.scroll.touchUp()
+  }
+
+  resize() {}
 
   update() {
     this.scroll.update()
@@ -142,5 +127,5 @@ export default class Page {
     }
   }
 
-  destroy(){}
+  destroy() {}
 }

@@ -1,4 +1,4 @@
-import Router from '../router/Router'
+import Router from '../Router'
 
 import NormalizeWheel from 'normalize-wheel'
 import each from 'lodash/each'
@@ -66,7 +66,8 @@ class App {
 
     this.views = {
       home: homeView,
-      about: aboutView
+      about: aboutView,
+      404: error404View
     }
 
     const html = await this.views[this.template]
@@ -161,10 +162,6 @@ class App {
 
   addEventListeners() {
     window.addEventListener('mousewheel', this.wheel.bind(this))
-
-    window.addEventListener('mousedown', this.touchDown.bind(this))
-    window.addEventListener('mousemove', this.touchMove.bind(this))
-    window.addEventListener('mouseup', this.touchUp.bind(this))
 
     window.addEventListener('touchstart', this.touchDown.bind(this))
     window.addEventListener('touchmove', this.touchMove.bind(this))

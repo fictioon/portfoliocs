@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 
-import vertex from '../../../../shaders/vertex.glsl'
-import fragment from '../../../../shaders/fragment.glsl'
+import vertex from '../../shaders/vertex.glsl'
+import fragment from '../../shaders/fragment.glsl'
 
 export default class About {
   constructor() {
@@ -28,47 +28,47 @@ export default class About {
     this.y = []
 
     this.photosElements.forEach((photoElement, index) => {
-      const bounds = photoElement.getBoundingClientRect();
+      const bounds = photoElement.getBoundingClientRect()
 
       const width = bounds.width / this.sizes.width
       const height = bounds.height / this.sizes.height
 
       this.meshes[index].scale.x = this.experience.camera.width * width
       this.meshes[index].scale.y = this.experience.camera.height * height
-      
-      const x = (bounds.left) / this.sizes.width
+
+      const x = bounds.left / this.sizes.width
 
       this.meshes[index].position.x =
         -this.experience.camera.width / 2 +
         this.meshes[index].scale.x / 2 +
         x * this.experience.camera.width
-      
-      const y = (bounds.top) / this.sizes.height
+
+      const y = bounds.top / this.sizes.height
 
       this.meshes[index].position.y =
         this.experience.camera.height / 2 -
         this.meshes[index].scale.y / 2 -
         y * this.experience.camera.height
-      
+
       this.x.push(x)
       this.y.push(y)
-      })
+    })
   }
 
   createGeometry() {
-    this.photosElements.forEach(_ => {
-      const geometry = new THREE.PlaneGeometry(1, 1, 100, 100);
-      
+    this.photosElements.forEach((_) => {
+      const geometry = new THREE.PlaneGeometry(1, 1, 100, 100)
+
       this.geometries.push(geometry)
     })
   }
 
-  createTexture(){
+  createTexture() {
     this.textures = [window.textures[1], window.textures[2]]
   }
 
   createMaterial() {
-    this.textures.forEach(texture => {
+    this.textures.forEach((texture) => {
       const material = new THREE.ShaderMaterial({
         uniforms: {
           uTexture: {
@@ -81,7 +81,7 @@ export default class About {
             value: new THREE.Vector2(0.0, 0.0)
           },
           uAlpha: {
-            value: 1.
+            value: 1
           }
         },
         vertexShader: vertex,
@@ -96,17 +96,14 @@ export default class About {
 
   createMesh() {
     this.photosElements.forEach((_, index) => {
-      const mesh = new THREE.Mesh( this.geometries[index], this.materials[index] );
+      const mesh = new THREE.Mesh(this.geometries[index], this.materials[index])
 
       this.meshes.push(mesh)
-      
+
       this.scene.add(mesh)
     })
 
-    // console.log(this.scene)
-
     this.meshDimensions()
-
   }
 
   resize() {
@@ -117,11 +114,18 @@ export default class About {
     this.meshDimensions()
 
     this.meshes.forEach((_, index) => {
-
       if (this.scroll) {
-        this.materials[index].uniforms.uOffset.value.set(this.x[index] * 0.0, -(this.scroll.target - this.scroll.current) * 0.00015)
+        this.materials[index].uniforms.uOffset.value.set(
+          this.x[index] * 0.0,
+          -(this.scroll.target - this.scroll.current) * 0.00015
+        )
 
-        this.materials[index].uniforms.uEffect.value.set((Math.random()-0.5)*0.005, (Math.random()-0.5)*0.005)
+        if (window.device === 'undefined') {
+          this.materials[index].uniforms.uEffect.value.set(
+            (Math.random() - 0.5) * 0.005,
+            (Math.random() - 0.5) * 0.005
+          )
+        }
       }
     })
   }
@@ -135,7 +139,7 @@ export default class About {
 
         for (const key in child.material) {
           const value = child.material[key]
-          
+
           if (value && typeof value.dispose === 'function') {
             value.dispose()
           }
