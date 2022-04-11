@@ -4,7 +4,8 @@ export default class Router {
     this.navigate(location.pathname)
   }
 
-  navigate(path) {
+  navigate(path, push) {
+    this.push = push
     this.resolve(this.routes, path)
   }
 
@@ -19,7 +20,9 @@ export default class Router {
           const fullpath = `${currRute.baseUrl}/${route.path}`
 
           if (fullpath === path) {
-            history.pushState({}, '', path)
+            if (this.push) {
+              history.pushState({}, '', path)
+            }
             route.action()
             return
           }
@@ -30,7 +33,9 @@ export default class Router {
   }
 
   error404(route) {
-    history.pushState({}, '', '/')
+    if (this.push) {
+      history.pushState({}, '', '/')
+    }
     route.action()
     return
   }

@@ -150,15 +150,16 @@ class App {
 
   popState() {
     this.change({
-      url: window.location.pathname
+      url: window.location.pathname,
+      push: false
     })
   }
 
-  async change({ url }) {
+  async change({ url, push }) {
     this.createLoadPage()
     await this.loadPage.loading()
 
-    await this.router.navigate(url)
+    await this.router.navigate(url, push)
 
     this.navigation.change(this.template)
 
@@ -213,7 +214,7 @@ class App {
         const href = link.getAttribute('href')
 
         this.navigation.disableLinks()
-        this.change({ url: href })
+        this.change({ url: href, push: true })
       }
     })
   }
