@@ -1,46 +1,47 @@
-.section__bio{
-  height: 116.4rem;
+.section__bio {
+  height: 150rem;
   width: 100%;
   position: relative;
-  
-  @include media('<tablet'){
+
+  @include media('<tablet') {
     height: auto;
   }
 }
 
-.section__bio__wrapper{
+.section__bio__wrapper {
   display: flex;
 
-  @include media('<tablet'){
-    flex-direction:column-reverse;
+  @include media('<tablet') {
+    flex-direction: column-reverse;
   }
 
-  .section__bio__portrait{
+  .section__bio__portrait {
     position: absolute;
     right: 20rem;
-    top:0;
+    top: 0;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
       margin-top: 8rem;
       position: static;
       width: 100%;
     }
   }
 
-  .section__bio__description{
-    bottom: 9rem;
+  .section__bio__description {
+    bottom: 15rem;
     height: 84rem;
     left: 10rem;
     position: absolute;
     width: 54rem;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
       height: auto;
-      margin: 8rem 5rem 0 5rem;
+      width: 100%;
+      padding: 10rem 5rem;
       position: static;
     }
 
-    .section__bio__description__wrapper{
+    .section__bio__description__wrapper {
       height: 100%;
       position: relative;
       width: 100%;
@@ -48,35 +49,35 @@
   }
 }
 
-.section__bio__text{
+.section__bio__text {
   font-size: 3.5rem;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
-.section__bio__logo{
+.section__bio__logo {
   bottom: 0;
   left: 0;
   position: absolute;
 
-  @include media('<tablet'){
+  @include media('<tablet') {
     position: static;
-    margin: 10rem 21.5rem 5rem;
+    margin: 10rem 21.5rem 0;
   }
 
-  .section__bio__logo__media{
+  .section__bio__logo__media {
     height: 30rem;
     width: 30rem;
     position: relative;
     mix-blend-mode: difference;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
       height: 20rem;
       width: 20rem;
     }
 
-    .section__bio__logo__image{
+    .section__bio__logo__image {
       @extend %cover;
 
       object-fit: cover;
@@ -84,23 +85,23 @@
   }
 }
 
-.section__bio__media{
+.section__bio__media {
   height: 116.4rem;
   width: 97.4rem;
   position: relative;
 
-  @include media('<tablet'){
+  @include media('<tablet') {
     position: static;
     width: 100%;
     height: auto;
   }
 
-  .section__bio__image{
+  .section__bio__image {
     @extend %cover;
 
     object-fit: cover;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
       position: static;
     }
   }

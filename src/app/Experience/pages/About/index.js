@@ -120,7 +120,7 @@ export default class About {
           -(this.scroll.target - this.scroll.current) * 0.00015
         )
 
-        if (window.device === 'undefined') {
+        if (window.device === undefined) {
           this.materials[index].uniforms.uEffect.value.set(
             (Math.random() - 0.5) * 0.005,
             (Math.random() - 0.5) * 0.005

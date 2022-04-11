@@ -75,6 +75,15 @@ const aboutView = () => {
                     pretium consequat. Suspendisse varius imperdiet aliquet.
                   </p>
                 </div>
+                <div class="section__skills__logo">
+                  <figure class="section__skills__logo__media">
+                    <img
+                      class="section__skills__logo__image object__rotate"
+                      alt="CS Creative Webs"
+                      src="images/home/abstract-figure.svg"
+                    />
+                  </figure>
+                </div>
               </div>
             </section>
             <section class="section__experience">

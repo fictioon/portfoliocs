@@ -1,17 +1,18 @@
-.footer__about__contact__networks{
+.footer__about__contact__networks {
   display: flex;
   font-size: 2.5rem;
   justify-content: space-between;
   text-transform: uppercase;
+  color: $color-blue;
 
-  @include media('<tablet'){
+  @include media('<tablet') {
     padding-bottom: 5rem;
   }
 
-  .footer__contact__items{
+  .footer__contact__items {
     display: flex;
 
-    .footer__network{
+    .footer__network {
       margin-right: 3rem;
     }
   }
