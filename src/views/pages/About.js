@@ -7,14 +7,10 @@ const aboutView = () => {
             <div class="about__header__bio">
               <div class="about__header__hi title">¡Hola!</div>
               <h1 class="about__header__title paragraph">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                massa odio.
+                Soy diseñador de profesión con conocimientos de desarrollo interactivo, mi es sede en Ecuador.
               </h1>
               <p class="about__header__description opacity__inner">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                massa odio, laoreet et enim nec, viverra varius magna. Etiam
-                luctus a ante luctus dictum. Duis eget erat at lectus pretium
-                consequat. Suspendisse varius imperdiet aliquet.
+                Fui diseñador web por bastante tiempo hasta que conocí el desarrollo, lo combiné y es lo que soy ahora. Decidí destacar y ser diferente a los demás, las animaciones e iteracciones especiales son lo mio, para mi la diferencia de 1px o 2px es importante, píxeles que los desarrolladores comunes no pueden capturar.
               </p>
             </div>
             <div class="about__header__portrait">
@@ -69,10 +65,9 @@ const aboutView = () => {
                     </div>
                   </div>
                   <p class="section__skill__description opacity__inner">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin massa odio, laoreet et enim nec, viverra varius magna.
-                    Etiam luctus a ante luctus dictum. Duis eget erat at lectus
-                    pretium consequat. Suspendisse varius imperdiet aliquet.
+                    Soy una persona tranquila, un poco introvertida, amante de los videojuegos pero bastante serio y responsable al trabajar. Mi motivación es crecer como desarrollador y alegrarte el día con mis proyectos.
+                    <br/> <br/>
+                    Nota: Javascript es lo mejor que me pudo pasar.
                   </p>
                 </div>
                 <div class="section__skills__logo">
@@ -186,10 +181,7 @@ const aboutView = () => {
                 </div>
                 <div class="section__moreinfo__description">
                   <p class="section__moreinfo__text opacity__inner">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin massa odio, laoreet et enim nec, viverra varius magna.
-                    Etiam luctus a ante luctus dictum. Duis eget erat at lectus
-                    pretium consequat. Suspendisse varius imperdiet aliquet.
+                    Mis proyectos están enfocados al web marketing. Tranquilo, tu marca está en buenas manos, destaca tu landing page con experiencias extraordinarias y haz que tus clientes nunca te olviden.
                   </p>
                 </div>
               </div>
@@ -218,7 +210,7 @@ const aboutView = () => {
                 </h2>
                 <a
                   class="footer__contact__label word__link title__inner"
-                  href="/"
+                  href="mailto:cristianmsaenza@gmail.com"
                   >Contáctame</a
                 >
               </div>
@@ -226,16 +218,16 @@ const aboutView = () => {
             <div class="footer__about__contact__networks">
               <ul class="footer__contact__items">
                 <li class="footer__network">
-                  <a class="word__link" href="/">Linkedin</a>
+                  <a class="word__link" href="https://www.linkedin.com/in/cristian-s%C3%A1enz-3b889b3b/" target="_blank">Linkedin</a>
                 </li>
                 <li class="footer__network">
-                  <a class="word__link" href="/">Instagram</a>
+                  <a class="word__link" href="https://www.instagram.com/cscreativedev/" target="_blank">Instagram</a>
                 </li>
                 <li class="footer__network">
-                  <a class="word__link" href="/">Facebook</a>
+                  <a class="word__link" href="https://www.facebook.com/cscreativedev" target="_blank">Facebook</a>
                 </li>
                 <li class="footer__network">
-                  <a class="word__link" href="/">Email</a>
+                  <a class="word__link" href="mailto:cristianmsaenza@gmail.com">Email</a>
                 </li>
               </ul>
               <div class="footer__copy">©2022</div>

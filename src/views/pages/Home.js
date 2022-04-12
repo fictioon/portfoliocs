@@ -23,17 +23,17 @@ const homeView = () => {
               <div class="header__contact__wrapper">
                 <ul class="header__networks">
                   <li class="header__network">
-                    <a class="word__link" href="/">Linkedin</a>
+                    <a class="word__link" href="https://www.linkedin.com/in/cristian-s%C3%A1enz-3b889b3b/" target="_blank">Linkedin</a>
                   </li>
                   <li class="header__network">
-                    <a class="word__link" href="/">Instagram</a>
+                    <a class="word__link" href="https://www.instagram.com/cscreativedev/" target="_blank">Instagram</a>
                   </li>
                   <li class="header__network">
-                    <a class="word__link" href="/">Facebook</a>
+                    <a class="word__link" href="https://www.facebook.com/cscreativedev" target="_blank">Facebook</a>
                   </li>
                 </ul>
                 <div class="header__mail">
-                  <a class="word__link" href="/">Email</a>
+                  <a class="word__link" href="mailto:cristianmsaenza@gmail.com">Email</a>
                 </div>
               </div>
             </div>
@@ -46,8 +46,7 @@ const homeView = () => {
                 <div class="section__bio__description">
                   <div class="section__bio__description__wrapper">
                     <p class="section__bio__text paragraph">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Proin massa odio.
+                      Mi nombre es Cristian Sáenz, soy diseñador con más de 10 años de experiencia.
                     </p>
                     <div class="section__bio__logo">
                       <figure class="section__bio__logo__media">
@@ -76,16 +75,13 @@ const homeView = () => {
               <div class="section__description__wrapper">
                 <div class="section__description__principal">
                   <p class="section__principal paragraph__inner">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin massa odio.
+                    Un desarrollador que entiende el diseño hace la diferencia al incorporar tu marca en un entorno web.
                   </p>
                   <p class="section__principal paragraph__inner">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin massa odio.
+                    Gráficos en movimiento, experiencias inusuales, mueven el corazon de los usuarios.
                   </p>
                   <p class="section__principal paragraph__inner">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin massa odio.
+                    Un sitio web es más que transmitir información, haz que tu marca sea especial.
                   </p>
                 </div>
                 <div class="section__description__highlights">
@@ -216,7 +212,7 @@ const homeView = () => {
                 </h2>
                 <a
                   class="footer__contact__label word__link title__inner"
-                  href="/"
+                  href="mailto:cristianmsaenza@gmail.com"
                   >Contáctame</a
                 >
               </div>
@@ -224,16 +220,16 @@ const homeView = () => {
             <div class="footer__contact__networks">
               <ul class="footer__contact__items">
                 <li class="footer__network">
-                  <a class="word__link" href="/">Linkedin</a>
+                  <a class="word__link" href="https://www.linkedin.com/in/cristian-s%C3%A1enz-3b889b3b/" target="_blank">Linkedin</a>
                 </li>
                 <li class="footer__network">
-                  <a class="word__link" href="/">Instagram</a>
+                  <a class="word__link" href="https://www.instagram.com/cscreativedev/" target="_blank">Instagram</a>
                 </li>
                 <li class="footer__network">
-                  <a class="word__link" href="/">Facebook</a>
+                  <a class="word__link" href="https://www.facebook.com/cscreativedev" target="_blank">Facebook</a>
                 </li>
                 <li class="footer__network">
-                  <a class="word__link" href="/">Email</a>
+                  <a class="word__link" href="mailto:cristianmsaenza@gmail.com">Email</a>
                 </li>
               </ul>
               <div class="footer__copy">©2022</div>

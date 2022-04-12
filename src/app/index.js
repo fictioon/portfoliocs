@@ -9,7 +9,6 @@ import loadPageView from '../views/partials/LoadPage'
 
 import homeView from '../views/pages/Home'
 import aboutView from '../views/pages/About'
-import error404View from '../views/pages/Error404'
 
 import Time from './utils/Time'
 import Sizes from './utils/Sizes'
@@ -60,12 +59,6 @@ class App {
         action: () => {
           this.createContent({ template: 'about' })
         }
-      },
-      {
-        path: '404',
-        action: () => {
-          this.createContent({ template: '404' })
-        }
       }
     ]
 
@@ -100,8 +93,7 @@ class App {
 
     this.views = {
       home: homeView,
-      about: aboutView,
-      404: error404View
+      about: aboutView
     }
 
     const html = await this.views[this.template]
