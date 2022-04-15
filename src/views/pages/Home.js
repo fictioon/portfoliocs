@@ -109,11 +109,11 @@ const homeView = () => {
               <div class="section__projects__wrapper">
                 <div class="section__line"></div>
                 <div class="section__proyect">
-                  <a class="section__proyect__link" href="/"></a>
+                  <a class="section__proyect__link" href="https://www.behance.net/cristiansenz/" target="_blank"></a>
                   <div class="section__proyect__media">
                     <img
                       class="section__proyect__image"
-                      alt="Proyecto 1"
+                      alt="Mi Portfolio"
                       src="images/home/project1-cscreativedev.jpg"
                     />
                     <div class="media__cover"></div>
@@ -121,7 +121,7 @@ const homeView = () => {
                   <div class="section__proyect__wrapper">
                     <div class="project__name">
                       <div class="proyect__number title">001</div>
-                      <h3 class="project__label title__inner">Proyecto 1</h3>
+                      <h3 class="project__label title__inner">Mi_Portfolio</h3>
                     </div>
                     <div class="project__do">
                       <h4 class="project__do__item paragraph__inner">
@@ -135,19 +135,19 @@ const homeView = () => {
                 </div>
                 <div class="section__line"></div>
                 <div class="section__proyect">
-                  <a class="section__proyect__link" href="/"></a>
+                  <a class="section__proyect__link" href="https://www.behance.net/gallery/141766941/Zinetikan-Sistema-de-facturacion" target="_blank"></a>
                   <div class="section__proyect__media">
                     <img
                       class="section__proyect__image"
-                      alt="Proyecto 2"
-                      src="images/home/project1-cscreativedev.jpg"
+                      alt="Zinetikan"
+                      src="images/home/project2-cscreativedev.jpg"
                     />
                     <div class="media__cover"></div>
                   </div>
                   <div class="section__proyect__wrapper">
                     <div class="project__name">
                       <div class="proyect__number title">002</div>
-                      <h3 class="project__label title__inner">Proyecto 2</h3>
+                      <h3 class="project__label title__inner">Zinetikan</h3>
                     </div>
                     <div class="project__do">
                       <h4 class="project__do__item paragraph__inner">
@@ -161,19 +161,19 @@ const homeView = () => {
                 </div>
                 <div class="section__line"></div>
                 <div class="section__proyect">
-                  <a class="section__proyect__link" href="/"></a>
+                  <a class="section__proyect__link" href="https://www.behance.net/gallery/141764693/Pencil-Agencia-Digital" target="_blank"></a>
                   <div class="section__proyect__media">
                     <img
                       class="section__proyect__image"
-                      alt="Proyecto 3"
-                      src="images/home/project1-cscreativedev.jpg"
+                      alt="Pencil"
+                      src="images/home/project3-cscreativedev.jpg"
                     />
                     <div class="media__cover"></div>
                   </div>
                   <div class="section__proyect__wrapper">
                     <div class="project__name">
                       <div class="proyect__number title">003</div>
-                      <h3 class="project__label title__inner">Proyecto 3</h3>
+                      <h3 class="project__label title__inner">Pencil</h3>
                     </div>
                     <div class="project__do">
                       <h4 class="project__do__item paragraph__inner">

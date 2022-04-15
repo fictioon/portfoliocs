@@ -7,7 +7,7 @@ const aboutView = () => {
             <div class="about__header__bio">
               <div class="about__header__hi title">¡Hola!</div>
               <h1 class="about__header__title paragraph">
-                Soy diseñador de profesión con conocimientos de desarrollo interactivo, mi es sede en Ecuador.
+                Soy diseñador de profesión con conocimientos de desarrollo interactivo, mi sede es en Ecuador.
               </h1>
               <p class="about__header__description opacity__inner">
                 Fui diseñador web por bastante tiempo hasta que conocí el desarrollo, lo combiné y es lo que soy ahora. Decidí destacar y ser diferente a los demás, las animaciones e iteracciones especiales son lo mio, para mi la diferencia de 1px o 2px es importante, píxeles que los desarrolladores comunes no pueden capturar.

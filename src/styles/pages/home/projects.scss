@@ -73,6 +73,11 @@
     }
   }
 
+  .section__proyect__link {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
   .section__proyect__link:hover ~ .section__proyect__wrapper .project__label {
     transform: translateX(10%);
   }
