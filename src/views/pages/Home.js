@@ -121,7 +121,7 @@ const homeView = () => {
                   <div class="section__proyect__wrapper">
                     <div class="project__name">
                       <div class="proyect__number title">001</div>
-                      <h3 class="project__label title__inner">Mi_Portfolio</h3>
+                      <h3 class="project__label title__inner">Portfolio</h3>
                     </div>
                     <div class="project__do">
                       <h4 class="project__do__item paragraph__inner">
