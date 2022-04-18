@@ -6,7 +6,7 @@ const navigationView = () => {
       >
       <ul class="navigation__list">
         <li class="navigation__list__item">
-          <a class="navigation__list__link nav__link word__link" href="/about"
+          <a class="navigation__list__link nav__link word__link" href="/acerca-de-mi"
             >Acerca de mi</a
           >
         </li>

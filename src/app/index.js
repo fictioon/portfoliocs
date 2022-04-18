@@ -55,7 +55,7 @@ class App {
         }
       },
       {
-        path: 'about',
+        path: 'acerca-de-mi',
         action: () => {
           this.createContent({ template: 'about' })
         }
