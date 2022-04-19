@@ -6,17 +6,17 @@ export default class LoadPage {
     this.loadPagePhrase = document.querySelector('.loadpage__phrase')
 
     this.phrases = [
-      'Me gusta comer.',
-      'Me gusta hearthstone.',
-      'Me gusta javascript.',
-      'Me gusta el norteño.',
-      'Odio los frameworks.',
-      'Me gusta animar.',
-      'Me gusta el cine.',
-      'Odio los jefes.',
+      'Diseñando desde 2011.',
+      'Diseño y desarrollo.',
+      'Vivo en Quito, Ecuador.',
+      'Me gusta vanilla javascript.',
+      'Experiencias con ThreeJS.',
+      'Desarrollo de landing pages.',
+      'Disfruto del buen cine.',
+      'Freelancer disponible.',
       'Me gusta el frontend.',
-      'Me gusta diseñar.',
-      'Me gustan los videojuegos.'
+      'Desarrollo creativo.',
+      'Landings para agencias digitales.'
     ]
 
     this.createPhrase()
