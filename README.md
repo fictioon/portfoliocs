@@ -29,11 +29,11 @@ npm run dev
 
 # Author Networks
 
-[Linkedin](https://www.linkedin.com/in/cristian-s%C3%A1enz-3b889b3b/)
-[Instagram](https://www.instagram.com/cscreativedev/)
+[Linkedin](https://www.linkedin.com/in/cristian-s%C3%A1enz-3b889b3b/) <br/>
+[Instagram](https://www.instagram.com/cscreativedev/) <br/>
 [Twitter](https://twitter.com/fictioon)
 
 # License
 
-This project is protected under the license [MIT](/LICENSE)
+This project is protected under the license [MIT](/LICENSE) <br/>
 [Cristian Sáenz](https://www.cristiansaenz.com) 2022
