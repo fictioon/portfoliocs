@@ -45,17 +45,15 @@ export default class Experience {
     this.changeEnd(this.template)
   }
 
-  changeStart() {
-    
-  }
+  changeStart() {}
 
   changeEnd(template) {
     if (template === 'home') {
-      this.destroyAbout()
+      this.destroy()
       this.createHome()
     }
     if (template === 'about') {
-      this.destroyHome()
+      this.destroy()
       this.createAbout()
     }
   }
@@ -71,7 +69,7 @@ export default class Experience {
       this.about.resize()
     }
   }
-  
+
   update() {
     this.camera.update()
     this.renderer.update()
@@ -86,15 +84,22 @@ export default class Experience {
     }
   }
 
-  destroyHome() {
-    if (this.home) {
-      this.home.destroy()
-    }
-  }
+  destroy() {
+    this.scene.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.geometry.dispose()
 
-  destroyAbout() {
-    if (this.about) {
-      this.about.destroy()
-    }
+        for (const key in child.material) {
+          const value = child.material[key]
+
+          if (value && typeof value.dispose === 'function') {
+            value.dispose()
+          }
+        }
+      }
+    })
+
+    this.renderer.instance.renderLists.dispose()
+    this.renderer.instance.dispose()
   }
 }

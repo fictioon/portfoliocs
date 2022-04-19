@@ -7,17 +7,19 @@ export default class Home extends Page {
     })
 
     this.elementsRotate = document.querySelectorAll('.object__rotate')
-    this.elementsRotateInverse = document.querySelectorAll('.object__rotate__inverse')
-
-    console.log('init home')
+    this.elementsRotateInverse = document.querySelectorAll(
+      '.object__rotate__inverse'
+    )
   }
 
   setRotate() {
-    this.elementsRotate.forEach(element => {
-      element.style.transform = `rotate(${this.scroll.scroll.current*0.1}deg)`
+    this.elementsRotate.forEach((element) => {
+      element.style.transform = `rotate(${this.scroll.scroll.current * 0.1}deg)`
     })
-    this.elementsRotateInverse.forEach(element => {
-      element.style.transform = `rotate(${-this.scroll.scroll.current*0.1}deg)`
+    this.elementsRotateInverse.forEach((element) => {
+      element.style.transform = `rotate(${
+        -this.scroll.scroll.current * 0.1
+      }deg)`
     })
   }
 

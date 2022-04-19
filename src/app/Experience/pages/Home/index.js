@@ -5,7 +5,6 @@ import fragment from '../../shaders/fragment.glsl'
 
 export default class About {
   constructor() {
-    console.log('init home exp')
     this.experience = window.experience
     this.scene = this.experience.scene
     this.sizes = this.experience.sizes
@@ -124,24 +123,6 @@ export default class About {
             (Math.random() - 0.5) * 0.005,
             (Math.random() - 0.5) * 0.005
           )
-        }
-      }
-    })
-  }
-
-  destroy() {
-    console.log('destroy home')
-
-    this.scene.traverse((child) => {
-      if (child instanceof THREE.Mesh) {
-        child.geometry.dispose()
-
-        for (const key in child.material) {
-          const value = child.material[key]
-
-          if (value && typeof value.dispose === 'function') {
-            value.dispose()
-          }
         }
       }
     })

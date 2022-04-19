@@ -7,13 +7,11 @@ export default class About extends Page {
     })
 
     this.elementsRotate = document.querySelectorAll('.object__rotate')
-
-    console.log('init about')
   }
 
   setRotate() {
-    this.elementsRotate.forEach(element => {
-      element.style.transform = `rotate(${this.scroll.scroll.current*0.1}deg)`
+    this.elementsRotate.forEach((element) => {
+      element.style.transform = `rotate(${this.scroll.scroll.current * 0.1}deg)`
     })
   }
 
