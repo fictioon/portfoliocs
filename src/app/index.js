@@ -189,6 +189,7 @@ class App {
 
   addEventListeners() {
     window.addEventListener('mousewheel', this.wheel.bind(this))
+    window.addEventListener('DOMMouseScroll', this.wheel.bind(this))
 
     window.addEventListener('touchstart', this.touchDown.bind(this))
     window.addEventListener('touchmove', this.touchMove.bind(this))

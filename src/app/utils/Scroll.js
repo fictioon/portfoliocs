@@ -17,7 +17,11 @@ export default class Scroll {
   }
 
   wheel({ pixelY }) {
-    this.scroll.target += pixelY * 0.5
+    if (pixelY < 100) {
+      this.scroll.target += pixelY * 1.5
+    } else {
+      this.scroll.target += pixelY * 0.5
+    }
   }
 
   touchDown() {
