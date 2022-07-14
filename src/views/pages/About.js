@@ -109,7 +109,7 @@ const aboutView = () => {
                         Surtrek Tour Operator
                       </h4>
                       <div class="company__positions paragraph__inner">
-                        Diseño / Frontend / UxUi
+                        Diseño / UxUi
                       </div>
                     </div>
                     <div class="company__duration">
