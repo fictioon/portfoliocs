@@ -1,13 +1,13 @@
 {
   "name": "portfoliocs",
   "version": "1.0.0",
-  "description": "Portfolio personal",
+  "description": "Portfolio personal de Cristian Sáenz",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
     "dev": "webpack serve --config ./bundler/webpack.dev.js"
   },
   "author": "Cristian Saenz",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",

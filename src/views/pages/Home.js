@@ -110,7 +110,7 @@ const homeView = () => {
                 <h2 class="section__projects__h2">Proyectos</h2>
                 <div class="section__line"></div>
                 <div class="section__proyect">
-                  <a class="section__proyect__link" href="https://www.behance.net/cristiansenz/" target="_blank"></a>
+                  <a class="section__proyect__link" href="https://github.com/fictioon/portfoliocs" target="_blank"></a>
                   <div class="section__proyect__media">
                     <img
                       class="section__proyect__image"
@@ -122,7 +122,7 @@ const homeView = () => {
                   <div class="section__proyect__wrapper">
                     <div class="project__name">
                       <div class="proyect__number title">001</div>
-                      <h3 class="project__label title__inner">Web_personal</h3>
+                      <h3 class="project__label title__inner">Git Mi portfolio</h3>
                     </div>
                     <div class="project__do">
                       <h4 class="project__do__item paragraph__inner">
