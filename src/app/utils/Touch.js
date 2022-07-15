@@ -26,11 +26,5 @@ export default class Touch {
 
   touchUp(event) {
     this.isDown = false
-
-    // const y = event.changedTouches
-    //   ? event.changedTouches[0].clientY
-    //   : event.clientY
-
-    // this.yDistance = this.y.end
   }
 }

@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import vertex from '../../shaders/vertex.glsl'
 import fragment from '../../shaders/fragment.glsl'
 
-export default class About {
+export default class Home {
   constructor() {
     this.experience = window.experience
     this.scene = this.experience.scene

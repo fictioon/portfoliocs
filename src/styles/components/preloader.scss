@@ -1,13 +1,12 @@
-.preloader{
+.preloader {
   @extend %center;
-	@extend %cover;
-  
+  @extend %cover;
+
   background: $color-gray-white;
   z-index: z('preloader');
-  // border-radius: 0 0 100rem 100rem;
 }
 
-.preloader__wrapper{
+.preloader__wrapper {
   align-items: center;
   color: $color-purple;
   display: flex;
@@ -15,11 +14,11 @@
   font-family: $font-italiana;
   text-transform: uppercase;
 
-  .preloader__count{
+  .preloader__count {
     font-size: 25rem;
   }
-  
-  .preloader__line{
+
+  .preloader__line {
     height: 1px;
     width: 80%;
     transform: scaleX(0%);
@@ -27,7 +26,7 @@
     margin: 1rem 0 4rem;
   }
 
-  .preloader__info{
+  .preloader__info {
     font-size: 5rem;
   }
 }
