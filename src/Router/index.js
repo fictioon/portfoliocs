@@ -11,16 +11,19 @@ export default class Router {
 
   resolve(routes, path) {
     const pathSplit = path.split('/')
-    console.log(pathSplit)
 
     if (pathSplit.length < 3) {
-      if (this.push) return history.pushState({}, '', path)
+      if (this.push) {
+        history.pushState({}, '', path)
+      }
       if (routes[path]) return routes[path].action()
     }
 
     if (pathSplit[1] === 'caso') {
       const id = pathSplit[2]
-      if (this.push) return history.pushState({}, '', path)
+      if (this.push) {
+        history.pushState({}, '', path)
+      }
       return routes['/caso/id'].action(id)
     }
 

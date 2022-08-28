@@ -3,6 +3,10 @@ import * as THREE from 'three'
 import { gsap, Power1 } from 'gsap'
 import { split } from '../utils/text'
 
+import textureImg1 from '../../assets/images/home/cristian-saenz-portrait.jpg'
+import textureImg2 from '../../assets/images/about/cristian-saenz-portrait-lost.jpg'
+import textureImg3 from '../../assets/images/about/cristian-saenz-portrait-hor.jpg'
+
 export default class Preloader extends EventEmitter {
   constructor() {
     super()
@@ -20,13 +24,13 @@ export default class Preloader extends EventEmitter {
     this.loadingManager = new THREE.LoadingManager()
 
     const texture1 = new THREE.TextureLoader(this.loadingManager).load(
-      '/images/home/cristian-saenz-portrait.jpg'
+      textureImg1
     )
     const texture2 = new THREE.TextureLoader(this.loadingManager).load(
-      '/images/about/cristian-saenz-portrait-lost.jpg'
+      textureImg2
     )
     const texture3 = new THREE.TextureLoader(this.loadingManager).load(
-      '/images/about/cristian-saenz-portrait-hor.jpg'
+      textureImg3
     )
 
     window.textures = [texture1, texture2, texture3]

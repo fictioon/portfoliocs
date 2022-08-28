@@ -26,6 +26,7 @@
     "portfinder-sync": "0.0.2",
     "postcss-loader": "^6.2.1",
     "prefix": "^1.0.0",
+    "raw-loader": "^4.0.2",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",

@@ -44,25 +44,22 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|png|gif|svg)$/,
+        test: /\.(jpg|png|gif|svg|ico)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[hash][ext]'
+          filename: 'assets/images/[name].[hash][ext]'
         }
       },
       {
         test: /\.(ttf|eot|woff|woff2)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/fonts/[hash][ext]'
+          filename: 'assets/fonts/[name].[hash][ext]'
         }
       },
       {
         test: /\.(glsl|vs|fs|vert|frag)$/,
-        type: 'asset/source',
-        generator: {
-          filename: 'assets/images/[hash][ext]'
-        }
+        use: ['raw-loader']
       }
     ]
   }

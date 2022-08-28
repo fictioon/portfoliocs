@@ -7,8 +7,8 @@ import preloaderView from '../views/partials/Preloader'
 import navigationView from '../views/partials/Navigation'
 import loadPageView from '../views/partials/LoadPage'
 
-import homeView from '../views/pages/Home'
-import aboutView from '../views/pages/About'
+import homeView from '../views/pages/home.html'
+import aboutView from '../views/pages/about.html'
 
 import Time from './utils/Time'
 import Sizes from './utils/Sizes'
@@ -79,7 +79,7 @@ class App {
     })
   }
 
-  async createContent({ template, id }) {
+  createContent({ template, id }) {
     this.template = template
 
     this.views = {
@@ -87,7 +87,7 @@ class App {
       about: aboutView
     }
 
-    const html = await this.views[this.template]
+    const html = this.views[this.template]
 
     this.content = document.querySelector('.content')
     this.content.innerHTML = html
