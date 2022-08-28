@@ -53,7 +53,7 @@ const homeView = () => {
                         <img
                           class="section__bio__logo__image object__rotate"
                           alt="CS Creative Webs"
-                          src="images/home/abstract-figure.svg"
+                          src="/images/home/abstract-figure.svg"
                         />
                       </figure>
                     </div>
@@ -64,7 +64,7 @@ const homeView = () => {
                     <img
                       class="section__bio__image three__image"
                       alt="Cristian Sáenz"
-                      src="images/home/cristian-saenz-portrait.jpg"
+                      src="/images/home/cristian-saenz-portrait.jpg"
                       data-webgl="image"
                     />
                   </figure>
@@ -99,7 +99,7 @@ const homeView = () => {
                     <img
                       class="section__description__star__image object__rotate"
                       alt="Star"
-                      src="images/home/star-figure.svg"
+                      src="/images/home/star-figure.svg"
                     />
                   </figure>
                 </div>
@@ -107,7 +107,7 @@ const homeView = () => {
             </section>
             <section class="section__projects">
               <div class="section__projects__wrapper">
-                <h2 class="section__projects__h2">Proyectos</h2>
+                <h2 class="section__projects__h2">Casos</h2>
                 <div class="section__line"></div>
                 <div class="section__proyect">
                   <a class="section__proyect__link" href="https://github.com/fictioon/portfoliocs" target="_blank"></a>
@@ -115,7 +115,7 @@ const homeView = () => {
                     <img
                       class="section__proyect__image"
                       alt="Mi Portfolio"
-                      src="images/home/project1-cscreativedev.jpg"
+                      src="/images/home/project1-cscreativedev.jpg"
                     />
                     <div class="media__cover"></div>
                   </div>
@@ -141,7 +141,7 @@ const homeView = () => {
                     <img
                       class="section__proyect__image"
                       alt="Zinetikan"
-                      src="images/home/project2-cscreativedev.jpg"
+                      src="/images/home/project2-cscreativedev.jpg"
                     />
                     <div class="media__cover"></div>
                   </div>
@@ -167,7 +167,7 @@ const homeView = () => {
                     <img
                       class="section__proyect__image"
                       alt="Pencil"
-                      src="images/home/project3-cscreativedev.jpg"
+                      src="/images/home/project3-cscreativedev.jpg"
                     />
                     <div class="media__cover"></div>
                   </div>
@@ -199,7 +199,7 @@ const homeView = () => {
                   <img
                     class="footer__contact__logo__image object__rotate"
                     alt="CS Creative Webs"
-                    src="images/home/abstract-figure.svg"
+                    src="/images/home/abstract-figure.svg"
                   />
                 </figure>
               </div>

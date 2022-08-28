@@ -37,31 +37,22 @@ class App {
     this.addEventListeners()
     this.addLinkListeners()
 
-    this.sizes.on('resize', () => {
-      this.resize()
-    })
-
-    this.time.on('tick', () => {
-      this.update()
-    })
+    this.resize()
+    this.update()
   }
 
   createRoutes() {
-    this.routes = [
-      {
-        path: '',
-        action: () => {
-          this.createContent({ template: 'home' })
-        }
+    this.routes = {
+      '/': {
+        action: () => this.createContent({ template: 'home' })
       },
-      {
-        path: 'acerca-de-mi',
-        action: () => {
-          this.createContent({ template: 'about' })
-        }
+      '/acerca-de-mi': {
+        action: () => this.createContent({ template: 'about' })
+      },
+      '/caso/id': {
+        action: (id) => this.createContent({ template: 'about', id })
       }
-    ]
-
+    }
     this.router = new Router(this.routes)
   }
 
@@ -81,14 +72,14 @@ class App {
       }
     ]
 
-    await each(this.partials, (partial) => {
+    each(this.partials, (partial) => {
       const html = partial.view
       const content = document.querySelector(`.${partial.name}`)
       content.innerHTML = html
     })
   }
 
-  async createContent({ template }) {
+  async createContent({ template, id }) {
     this.template = template
 
     this.views = {
@@ -148,7 +139,7 @@ class App {
   }
 
   async change({ url, push }) {
-    this.createLoadPage()
+    await this.createLoadPage()
     await this.loadPage.loading()
 
     await this.router.navigate(url, push)
@@ -163,8 +154,10 @@ class App {
   }
 
   resize() {
-    this.page.resize()
-    this.experience.resize()
+    this.sizes.on('resize', () => {
+      this.page.resize()
+      this.experience.resize()
+    })
   }
 
   wheel(event) {
@@ -183,8 +176,10 @@ class App {
   }
 
   update() {
-    this.page.update()
-    this.experience.update()
+    this.time.on('tick', () => {
+      this.page.update()
+      this.experience.update()
+    })
   }
 
   addEventListeners() {

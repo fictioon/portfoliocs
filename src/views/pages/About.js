@@ -18,7 +18,7 @@ const aboutView = () => {
                 <img
                   class="about__header__image three__image"
                   alt="Cristian Saenz"
-                  src="images/about/cristian-saenz-portrait-lost.jpg"
+                  src="/images/about/cristian-saenz-portrait-lost.jpg"
                   data-webgl="image"
                 />
               </figure>
@@ -75,7 +75,7 @@ const aboutView = () => {
                     <img
                       class="section__skills__logo__image object__rotate"
                       alt="CS Creative Webs"
-                      src="images/home/abstract-figure.svg"
+                      src="/images/home/abstract-figure.svg"
                     />
                   </figure>
                 </div>
@@ -157,7 +157,7 @@ const aboutView = () => {
                   <img
                     class="section__photo__image three__image"
                     alt="Cristian Saenz"
-                    src="images/about/cristian-saenz-portrait-hor.jpg"
+                    src="/images/about/cristian-saenz-portrait-hor.jpg"
                     data-webgl="image"
                   />
                 </figure>
@@ -196,7 +196,7 @@ const aboutView = () => {
                   <img
                     class="footer__contact__logo__image object__rotate"
                     alt="CS Creative Webs"
-                    src="images/home/abstract-figure.svg"
+                    src="/images/home/abstract-figure.svg"
                   />
                 </figure>
               </div>
