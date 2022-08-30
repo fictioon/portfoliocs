@@ -3,9 +3,9 @@ import Router from '../Router'
 import NormalizeWheel from 'normalize-wheel'
 import each from 'lodash/each'
 
-import preloaderView from '../views/partials/Preloader'
-import navigationView from '../views/partials/Navigation'
-import loadPageView from '../views/partials/LoadPage'
+import preloaderView from '../views/partials/preloader.html'
+import navigationView from '../views/partials/navigation.html'
+import loadPageView from '../views/partials/loadPage.html'
 
 import homeView from '../views/pages/home.html'
 import aboutView from '../views/pages/about.html'
@@ -57,26 +57,17 @@ class App {
   }
 
   async createPartials() {
-    this.partials = [
-      {
-        name: 'preloader',
-        view: preloaderView
-      },
-      {
-        name: 'navigation',
-        view: navigationView
-      },
-      {
-        name: 'loadpage',
-        view: loadPageView
-      }
-    ]
+    this.partials = {
+      preloader: preloaderView,
+      navigation: navigationView,
+      loadpage: loadPageView
+    }
 
-    each(this.partials, (partial) => {
-      const html = partial.view
-      const content = document.querySelector(`.${partial.name}`)
+    for (const partial in this.partials) {
+      const html = this.partials[partial]
+      const content = document.querySelector(`.${partial}`)
       content.innerHTML = html
-    })
+    }
   }
 
   createContent({ template, id }) {
@@ -96,7 +87,7 @@ class App {
   }
 
   createExperience() {
-    const canvas = document.querySelector('canvas.webgl')
+    const canvas = document.querySelector('.webgl')
     this.experience = new Experience(canvas, this.template)
   }
 
@@ -165,6 +156,16 @@ class App {
     this.page.wheel(normalizedWheel)
   }
 
+  mouseDown(event) {
+    this.page.mouseDown(event)
+  }
+  mouseMove(event) {
+    this.page.mouseMove(event)
+  }
+  mouseUp(event) {
+    this.page.mouseUp(event)
+  }
+
   touchDown(event) {
     this.page.touchDown(event)
   }
@@ -185,6 +186,10 @@ class App {
   addEventListeners() {
     window.addEventListener('mousewheel', this.wheel.bind(this))
     window.addEventListener('DOMMouseScroll', this.wheel.bind(this))
+
+    window.addEventListener('mousedown', this.mouseDown.bind(this))
+    window.addEventListener('mousemove', this.mouseMove.bind(this))
+    window.addEventListener('mouseup', this.mouseUp.bind(this))
 
     window.addEventListener('touchstart', this.touchDown.bind(this))
     window.addEventListener('touchmove', this.touchMove.bind(this))

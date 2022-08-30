@@ -1,0 +1,110 @@
+.section__cases {
+  width: 100%;
+}
+
+.section__cases__wrapper {
+  padding: 15rem 0;
+  position: relative;
+
+  @include media('<tablet') {
+    padding: 10rem 0;
+  }
+
+  .section__cases__h2 {
+    font-size: 30rem;
+    font-family: $font-italiana;
+    margin-bottom: 10rem;
+    padding-left: 8rem;
+
+    @include media('<tablet') {
+      font-size: 14rem;
+      margin-right: 5rem;
+    }
+  }
+
+  .section__cases__help {
+    font-family: $font-italiana;
+    position: absolute;
+    font-size: 4rem;
+    right: 30rem;
+    bottom: 23rem;
+    color: $color-gray-white;
+    mix-blend-mode: difference;
+    z-index: z('navigation');
+    user-select: none;
+
+    @include media('<tablet') {
+      left: 50%;
+      right: auto;
+      bottom: 10rem;
+      transform: translateX(-50%);
+    }
+  }
+
+  .section__cases__all {
+    overflow: hidden;
+    padding: 10rem 0;
+
+    .section__cases__all__wrapper {
+      display: inline-flex;
+
+      .section__case {
+        width: 80vw;
+
+        .section__case__wrapper {
+          margin: 0 auto;
+          position: relative;
+          width: 70%;
+
+          .section__case__number,
+          .section__case__name {
+            font-family: $font-italiana;
+            font-size: 14rem;
+            position: absolute;
+            user-select: none;
+          }
+
+          .section__case__number {
+            bottom: -6rem;
+            right: -10rem;
+          }
+
+          .section__case__name {
+            left: -10rem;
+            top: -9rem;
+          }
+
+          .section__case__media {
+            .section__case__image {
+              width: 100%;
+            }
+          }
+          @include media('<tablet') {
+            .section__case__number,
+            .section__case__name {
+              font-size: 8rem;
+            }
+
+            .section__case__number {
+              bottom: -3rem;
+              right: -3rem;
+            }
+
+            .section__case__name {
+              left: -2rem;
+              top: -5rem;
+            }
+          }
+
+          @include media('<tablet') {
+            width: 80%;
+          }
+        }
+
+        @include media('<tablet') {
+          width: 100vw;
+        }
+      }
+    }
+  }
+}

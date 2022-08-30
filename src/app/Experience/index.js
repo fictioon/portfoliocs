@@ -22,6 +22,7 @@ export default class Experience {
     window.experience = this
     this.template = template
     this.scroll = null
+    this.mouse = null
 
     this.canvas = canvas
     this.sizes = new Sizes()
@@ -77,6 +78,7 @@ export default class Experience {
     if (this.home) {
       this.home.update()
       this.home.scroll = this.scroll
+      this.home.mouse = this.mouse
     }
     if (this.about) {
       this.about.update()

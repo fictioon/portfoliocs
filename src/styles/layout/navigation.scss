@@ -8,7 +8,7 @@
   mix-blend-mode: difference;
 
   @include media('<tablet') {
-    background: $color-purple;
+    background: $color-gray-black;
     backdrop-filter: none;
     mix-blend-mode: normal;
   }
@@ -16,7 +16,7 @@
 .navigation__wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 5rem 8rem;
+  padding: 3rem 8rem;
 
   @include media('<tablet') {
     padding: 5rem;

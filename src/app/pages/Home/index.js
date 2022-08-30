@@ -3,7 +3,9 @@ import Page from '../../classes/Page'
 export default class Home extends Page {
   constructor() {
     super({
-      wrapper: '.home__wrapper'
+      wrapper: '.home__wrapper',
+      cases: '.section__cases__all__wrapper',
+      links: '.section__case__link'
     })
 
     this.elementsRotate = document.querySelectorAll('.object__rotate')

@@ -12,6 +12,7 @@ export default class Home {
     this.photosElements = document.querySelectorAll('.three__image')
 
     this.scroll = null
+    this.mouse = null
     this.materials = []
     this.geometries = []
     this.meshes = []
@@ -63,7 +64,12 @@ export default class Home {
   }
 
   createTexture() {
-    this.textures = [window.textures[0]]
+    this.textures = [
+      window.textures[0],
+      window.textures[1],
+      window.textures[2],
+      window.textures[3]
+    ]
   }
 
   createMaterial() {
@@ -85,8 +91,7 @@ export default class Home {
         },
         vertexShader: vertex,
         fragmentShader: fragment,
-        transparent: true,
-        side: THREE.DoubleSide
+        transparent: true
       })
 
       this.materials.push(material)
@@ -104,7 +109,7 @@ export default class Home {
 
     this.meshDimensions()
   }
-
+  23
   resize() {
     this.meshDimensions()
   }
@@ -115,7 +120,7 @@ export default class Home {
     this.meshes.forEach((_, index) => {
       if (this.scroll) {
         this.materials[index].uniforms.uOffset.value.set(
-          this.x[index] * 0.0,
+          (this.mouse.target - this.mouse.current) * 0.00015,
           -(this.scroll.target - this.scroll.current) * 0.00015
         )
         if (window.device === undefined) {

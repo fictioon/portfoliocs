@@ -2,6 +2,7 @@ import each from 'lodash/each'
 import { gsap, Power1 } from 'gsap'
 
 import Scroll from '../utils/Scroll'
+import Mouse from '../utils/Mouse'
 import Touch from '../utils/Touch'
 import Title from '../animations/Title'
 import Paragraph from '../animations/Paragraph'
@@ -10,9 +11,17 @@ import Line from '../animations/Line'
 import Opacity from '../animations/Opacity'
 
 export default class Page {
-  constructor({ wrapper }) {
+  constructor({ wrapper, cases, links }) {
     this.container = document.querySelector('.content')
     this.element = document.querySelector(wrapper)
+
+    if (cases) {
+      this.cases = document.querySelector(cases)
+    }
+
+    if (links) {
+      this.links = document.querySelectorAll(links)
+    }
 
     this.titleElements = document.querySelectorAll('.title')
     this.titleInnerElements = document.querySelectorAll('.title__inner')
@@ -23,6 +32,7 @@ export default class Page {
     this.lineElements = document.querySelectorAll('.section__line')
 
     this.createScroll()
+    this.createMouse()
     this.createTouch()
   }
 
@@ -30,6 +40,15 @@ export default class Page {
     this.scroll = new Scroll({
       element: this.element
     })
+  }
+
+  createMouse() {
+    if (this.cases) {
+      this.mouse = new Mouse({
+        element: this.cases,
+        links: this.links
+      })
+    }
   }
 
   createTouch() {
@@ -105,25 +124,50 @@ export default class Page {
     this.scroll.wheel(event)
   }
 
+  mouseDown(event) {
+    if (this.cases) {
+      this.mouse.mouseDown(event)
+    }
+  }
+  mouseMove(event) {
+    if (this.cases) {
+      this.mouse.mouseMove(event)
+    }
+  }
+  mouseUp(event) {
+    if (this.cases) {
+      this.mouse.mouseUp(event)
+    }
+  }
+
   touchDown(event) {
     this.touch.touchDown(event)
     this.scroll.touchDown()
+    this.mouse.touchDown()
   }
   touchMove(event) {
     this.touch.touchMove(event)
-    this.scroll.touchMove(this.touch.yDistance)
+    this.scroll.touchMove(this.touch.y.distance)
+    this.mouse.touchMove(this.touch.x.distance)
   }
   touchUp(event) {
     this.touch.touchUp(event)
     this.scroll.touchUp()
+    this.mouse.touchUp()
   }
 
   resize() {}
 
   update() {
     this.scroll.update()
+    if (this.cases) {
+      this.mouse.update()
+    }
     if (window.experience) {
       window.experience.scroll = this.scroll.scroll
+      if (this.cases) {
+        window.experience.mouse = this.mouse.move
+      }
     }
   }
 

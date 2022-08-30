@@ -3,10 +3,6 @@ import * as THREE from 'three'
 import { gsap, Power1 } from 'gsap'
 import { split } from '../utils/text'
 
-import textureImg1 from '../../assets/images/home/cristian-saenz-portrait.jpg'
-import textureImg2 from '../../assets/images/about/cristian-saenz-portrait-lost.jpg'
-import textureImg3 from '../../assets/images/about/cristian-saenz-portrait-hor.jpg'
-
 export default class Preloader extends EventEmitter {
   constructor() {
     super()
@@ -17,24 +13,40 @@ export default class Preloader extends EventEmitter {
     this.loadingBarElement = document.querySelector('.preloader__line')
     this.preloaderInfoElement = document.querySelector('.preloader__info__text')
 
+    this.textures = []
+
     this.createLoadingManager()
   }
 
   createLoadingManager() {
     this.loadingManager = new THREE.LoadingManager()
+    this.createTextures()
+  }
 
-    const texture1 = new THREE.TextureLoader(this.loadingManager).load(
-      textureImg1
-    )
-    const texture2 = new THREE.TextureLoader(this.loadingManager).load(
-      textureImg2
-    )
-    const texture3 = new THREE.TextureLoader(this.loadingManager).load(
-      textureImg3
-    )
+  createTextures() {
+    const texturesRutes = [
+      require('../../assets/images/home/cristian-saenz-portrait.jpg'),
+      require('../../assets/images/home/project1-cscreativedev.jpg'),
+      require('../../assets/images/home/project2-cscreativedev.jpg'),
+      require('../../assets/images/home/project3-cscreativedev.jpg'),
+      require('../../assets/images/about/cristian-saenz-portrait-lost.jpg'),
+      require('../../assets/images/about/cristian-saenz-portrait-hor.jpg')
+    ]
 
-    window.textures = [texture1, texture2, texture3]
+    texturesRutes.forEach((texture) => {
+      const textureLoaded = new THREE.TextureLoader(this.loadingManager).load(
+        texture
+      )
 
+      this.textures.push(textureLoaded)
+    })
+
+    window.textures = this.textures
+
+    this.loading()
+  }
+
+  loading() {
     this.loadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
       const progressRatio = itemsLoaded / itemsTotal
       this.loadingBarElement.style.transform = `scaleX(${progressRatio})`

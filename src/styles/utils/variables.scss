@@ -1,13 +1,19 @@
-$color-purple: #1F1E1D;
-$color-purple-black: #1B1611;
-$color-gray-white: #E4E4E4;
-$color-gray-medium: #A098AB;
-$color-blue: #44BBFF;
+$color-gray-black: #1f1e1d;
+$color-gray-black-black: #1b1611;
+$color-gray-white: #e4e4e4;
+$color-gray-medium: #a098ab;
+$color-blue: #44bbff;
 
 $font-italiana: 'Italiana';
 $font-ubuntu: 'Ubuntu';
 
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
-
-$z-indexes: ('loadpage', 'preloader', 'navigation', 'lines', 'canvas' , 'content');
+$z-indexes: (
+  'loadpage',
+  'preloader',
+  'navigation',
+  'lines',
+  'content',
+  'canvas'
+);

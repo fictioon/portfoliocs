@@ -8,7 +8,7 @@
 
 .preloader__wrapper {
   align-items: center;
-  color: $color-purple;
+  color: $color-gray-black;
   display: flex;
   flex-direction: column;
   font-family: $font-italiana;
@@ -22,7 +22,7 @@
     height: 1px;
     width: 80%;
     transform: scaleX(0%);
-    background-color: $color-purple;
+    background-color: $color-gray-black;
     margin: 1rem 0 4rem;
   }
 

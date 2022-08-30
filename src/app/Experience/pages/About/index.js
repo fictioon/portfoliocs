@@ -63,7 +63,7 @@ export default class About {
   }
 
   createTexture() {
-    this.textures = [window.textures[1], window.textures[2]]
+    this.textures = [window.textures[4], window.textures[5]]
   }
 
   createMaterial() {
