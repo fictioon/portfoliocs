@@ -7,7 +7,7 @@
   position: relative;
 
   @include media('<tablet') {
-    padding: 10rem 0;
+    padding: 10rem 0 20rem;
   }
 
   .section__cases__h2 {
@@ -36,7 +36,8 @@
     @include media('<tablet') {
       left: 50%;
       right: auto;
-      bottom: 4rem;
+      bottom: 10rem;
+      font-size: 6rem;
       transform: translateX(-50%);
     }
   }
