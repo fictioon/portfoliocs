@@ -56,7 +56,9 @@ export default class Page {
   }
 
   loaded({ delay }) {
-    this.show(delay)
+    this.delay = delay
+
+    this.show(this.delay)
 
     if (this.backgroundElement) {
       new Background(this.backgroundElement, 0, '-25%')
@@ -64,7 +66,7 @@ export default class Page {
 
     if (this.paragraphLargeElements) {
       each(this.paragraphLargeElements, (large) => {
-        new Opacity(large, 0.3)
+        new Opacity(large, 0.2)
       })
     }
 
@@ -73,19 +75,19 @@ export default class Page {
     })
 
     each(this.titleElements, (title) => {
-      new Title(title, delay)
+      new Title(title, this.delay)
     })
 
     each(this.titleInnerElements, (title) => {
-      new Title(title, 0.3)
+      new Title(title, 0.2)
     })
 
     each(this.paragraphElements, (paragraph) => {
-      new Paragraph(paragraph, delay)
+      new Paragraph(paragraph, this.delay)
     })
 
     each(this.paragraphInnerElements, (paragraph) => {
-      new Paragraph(paragraph, 0.3)
+      new Paragraph(paragraph, 0.2)
     })
   }
 
