@@ -36,7 +36,7 @@
     @include media('<tablet') {
       left: 50%;
       right: auto;
-      bottom: 10rem;
+      bottom: 4rem;
       transform: translateX(-50%);
     }
   }
@@ -79,25 +79,34 @@
               width: 100%;
             }
           }
+
           @include media('<tablet') {
             .section__case__number,
             .section__case__name {
               font-size: 8rem;
+              position: static;
             }
 
             .section__case__number {
               bottom: -3rem;
               right: -3rem;
+              margin-top: 1rem;
+              align-self: flex-end;
             }
 
             .section__case__name {
               left: -2rem;
               top: -5rem;
+              margin-bottom: 2rem;
             }
           }
 
           @include media('<tablet') {
-            width: 80%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0 5rem;
           }
         }
 
@@ -105,6 +114,10 @@
           width: 100vw;
         }
       }
+    }
+
+    @include media('<tablet') {
+      padding: 0;
     }
   }
 }
