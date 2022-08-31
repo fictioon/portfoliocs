@@ -12,6 +12,10 @@ export default class Home extends Page {
     this.elementsRotateInverse = document.querySelectorAll(
       '.object__rotate__inverse'
     )
+
+    this.title1 = document.querySelector('.header__title__dev')
+    this.title2 = document.querySelector('.header__title__mix')
+    this.title3 = document.querySelector('.header__title__des')
   }
 
   setRotate() {
@@ -25,9 +29,22 @@ export default class Home extends Page {
     })
   }
 
+  setMove() {
+    this.title1.style.transform = `translateX(${
+      -this.scroll.scroll.current * 0.5
+    }px)`
+    this.title2.style.transform = `translateX(${
+      this.scroll.scroll.current * 0.4
+    }px)`
+    this.title3.style.transform = `translateX(${
+      -this.scroll.scroll.current * 0.2
+    }px)`
+  }
+
   update() {
     super.update()
 
     this.setRotate()
+    this.setMove()
   }
 }

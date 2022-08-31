@@ -20,7 +20,10 @@ export default class Navigation {
 
   enableLink(template) {
     if (template === 'home') {
-      this.links[1].style.pointerEvents = null
+      each(this.links, (link) => {
+        link.style.pointerEvents = null
+      })
+      this.links[0].style.pointerEvents = 'none'
     }
     if (template === 'about') {
       this.links[0].style.pointerEvents = null
