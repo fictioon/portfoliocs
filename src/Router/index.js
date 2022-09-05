@@ -1,7 +1,7 @@
 export default class Router {
   constructor(routes) {
     this.routes = routes
-    this.navigate(location.pathname, false)
+    this.navigate(location.pathname)
   }
 
   navigate(path, push) {
@@ -10,24 +10,26 @@ export default class Router {
   }
 
   resolve(routes, path) {
-    const pathSplit = path.split('/')
+    if (routes.length) {
+      const queque = [{ routes, baseUrl: '' }]
 
-    if (pathSplit.length < 3) {
-      if (this.push) {
-        history.pushState({}, '', path)
+      while (queque.length) {
+        const currRute = queque.shift()
+
+        for (const route of currRute.routes || []) {
+          const fullpath = `${currRute.baseUrl}/${route.path}`
+
+          if (fullpath === path) {
+            if (this.push) {
+              history.pushState({}, '', path)
+            }
+            route.action()
+            return
+          }
+        }
+        this.error404(routes[0])
       }
-      if (routes[path]) return routes[path].action()
     }
-
-    if (pathSplit[1] === 'caso') {
-      const id = pathSplit[2]
-      if (this.push) {
-        history.pushState({}, '', path)
-      }
-      return routes['/caso/id'].action(id)
-    }
-
-    this.error404(routes['/'])
   }
 
   error404(route) {

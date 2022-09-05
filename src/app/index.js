@@ -3,12 +3,12 @@ import Router from '../Router'
 import NormalizeWheel from 'normalize-wheel'
 import each from 'lodash/each'
 
-import preloaderView from '../views/partials/preloader.html'
-import navigationView from '../views/partials/navigation.html'
-import loadPageView from '../views/partials/loadPage.html'
+import preloaderView from '../views/partials/Preloader'
+import navigationView from '../views/partials/Navigation'
+import loadPageView from '../views/partials/LoadPage'
 
-import homeView from '../views/pages/home.html'
-import aboutView from '../views/pages/about.html'
+import homeView from '../views/pages/Home'
+import aboutView from '../views/pages/About'
 
 import Time from './utils/Time'
 import Sizes from './utils/Sizes'
@@ -37,40 +37,58 @@ class App {
     this.addEventListeners()
     this.addLinkListeners()
 
-    this.resize()
-    this.update()
+    this.sizes.on('resize', () => {
+      this.resize()
+    })
+
+    this.time.on('tick', () => {
+      this.update()
+    })
   }
 
   createRoutes() {
-    this.routes = {
-      '/': {
-        action: () => this.createContent({ template: 'home' })
+    this.routes = [
+      {
+        path: '',
+        action: () => {
+          this.createContent({ template: 'home' })
+        }
       },
-      '/acerca-de-mi': {
-        action: () => this.createContent({ template: 'about' })
-      },
-      '/caso/id': {
-        action: (id) => this.createContent({ template: 'about', id })
+      {
+        path: 'acerca-de-mi',
+        action: () => {
+          this.createContent({ template: 'about' })
+        }
       }
-    }
+    ]
+
     this.router = new Router(this.routes)
   }
 
   async createPartials() {
-    this.partials = {
-      preloader: preloaderView,
-      navigation: navigationView,
-      loadpage: loadPageView
-    }
+    this.partials = [
+      {
+        name: 'preloader',
+        view: preloaderView
+      },
+      {
+        name: 'navigation',
+        view: navigationView
+      },
+      {
+        name: 'loadpage',
+        view: loadPageView
+      }
+    ]
 
-    for (const partial in this.partials) {
-      const html = this.partials[partial]
-      const content = document.querySelector(`.${partial}`)
+    await each(this.partials, (partial) => {
+      const html = partial.view
+      const content = document.querySelector(`.${partial.name}`)
       content.innerHTML = html
-    }
+    })
   }
 
-  createContent({ template, id }) {
+  async createContent({ template }) {
     this.template = template
 
     this.views = {
@@ -78,7 +96,7 @@ class App {
       about: aboutView
     }
 
-    const html = this.views[this.template]
+    const html = await this.views[this.template]
 
     this.content = document.querySelector('.content')
     this.content.innerHTML = html
@@ -87,7 +105,7 @@ class App {
   }
 
   createExperience() {
-    const canvas = document.querySelector('.webgl')
+    const canvas = document.querySelector('canvas.webgl')
     this.experience = new Experience(canvas, this.template)
   }
 
@@ -130,7 +148,7 @@ class App {
   }
 
   async change({ url, push }) {
-    await this.createLoadPage()
+    this.createLoadPage()
     await this.loadPage.loading()
 
     await this.router.navigate(url, push)
@@ -145,25 +163,13 @@ class App {
   }
 
   resize() {
-    this.sizes.on('resize', () => {
-      this.page.resize()
-      this.experience.resize()
-    })
+    this.page.resize()
+    this.experience.resize()
   }
 
   wheel(event) {
     const normalizedWheel = NormalizeWheel(event)
     this.page.wheel(normalizedWheel)
-  }
-
-  mouseDown(event) {
-    this.page.mouseDown(event)
-  }
-  mouseMove(event) {
-    this.page.mouseMove(event)
-  }
-  mouseUp(event) {
-    this.page.mouseUp(event)
   }
 
   touchDown(event) {
@@ -177,19 +183,13 @@ class App {
   }
 
   update() {
-    this.time.on('tick', () => {
-      this.page.update()
-      this.experience.update()
-    })
+    this.page.update()
+    this.experience.update()
   }
 
   addEventListeners() {
     window.addEventListener('mousewheel', this.wheel.bind(this))
     window.addEventListener('DOMMouseScroll', this.wheel.bind(this))
-
-    window.addEventListener('mousedown', this.mouseDown.bind(this))
-    window.addEventListener('mousemove', this.mouseMove.bind(this))
-    window.addEventListener('mouseup', this.mouseUp.bind(this))
 
     window.addEventListener('touchstart', this.touchDown.bind(this))
     window.addEventListener('touchmove', this.touchMove.bind(this))
