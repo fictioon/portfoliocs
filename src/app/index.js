@@ -3,12 +3,12 @@ import Router from '../Router'
 import NormalizeWheel from 'normalize-wheel'
 import each from 'lodash/each'
 
-import preloaderView from '../views/partials/Preloader_'
-import navigationView from '../views/partials/Navigation_'
-import loadPageView from '../views/partials/LoadPage_'
+import preloaderView from '../views/partials/Preloader'
+import navigationView from '../views/partials/Navigation'
+import loadPageView from '../views/partials/LoadPage'
 
-import homeView from '../views/pages/Home_'
-import aboutView from '../views/pages/About_'
+import homeView from '../views/pages/Home'
+import aboutView from '../views/pages/About'
 
 import Time from './utils/Time'
 import Sizes from './utils/Sizes'
