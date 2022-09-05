@@ -172,6 +172,16 @@ class App {
     this.page.wheel(normalizedWheel)
   }
 
+  mouseDown(event) {
+    this.page.mouseDown(event)
+  }
+  mouseMove(event) {
+    this.page.mouseMove(event)
+  }
+  mouseUp(event) {
+    this.page.mouseUp(event)
+  }
+
   touchDown(event) {
     this.page.touchDown(event)
   }
@@ -190,6 +200,10 @@ class App {
   addEventListeners() {
     window.addEventListener('mousewheel', this.wheel.bind(this))
     window.addEventListener('DOMMouseScroll', this.wheel.bind(this))
+
+    window.addEventListener('mousedown', this.mouseDown.bind(this))
+    window.addEventListener('mousemove', this.mouseMove.bind(this))
+    window.addEventListener('mouseup', this.mouseUp.bind(this))
 
     window.addEventListener('touchstart', this.touchDown.bind(this))
     window.addEventListener('touchmove', this.touchMove.bind(this))
