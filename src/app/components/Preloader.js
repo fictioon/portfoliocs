@@ -30,7 +30,19 @@ export default class Preloader extends EventEmitter {
       require('../../assets/images/home/project2-cscreativedev.jpg'),
       require('../../assets/images/home/project3-cscreativedev.jpg'),
       require('../../assets/images/about/cristian-saenz-portrait-lost.jpg'),
-      require('../../assets/images/about/cristian-saenz-portrait-hor.jpg')
+      require('../../assets/images/about/cristian-saenz-portrait-hor.jpg'),
+      require('../../assets/images/cases/ecuatraveling/ecuatraveling-1.jpg'),
+      require('../../assets/images/cases/ecuatraveling/ecuatraveling-2.jpg'),
+      require('../../assets/images/cases/ecuatraveling/ecuatraveling-3.jpg'),
+      require('../../assets/images/cases/ecuatraveling/ecuatraveling-4.jpg'),
+      require('../../assets/images/cases/pencil/pencil-1.jpg'),
+      require('../../assets/images/cases/pencil/pencil-2.jpg'),
+      require('../../assets/images/cases/pencil/pencil-3.jpg'),
+      require('../../assets/images/cases/pencil/pencil-4.jpg'),
+      require('../../assets/images/cases/zinetikan/zinetikan-1.jpg'),
+      require('../../assets/images/cases/zinetikan/zinetikan-2.jpg'),
+      require('../../assets/images/cases/zinetikan/zinetikan-3.jpg'),
+      require('../../assets/images/cases/zinetikan/zinetikan-4.jpg')
     ]
 
     texturesRutes.forEach((texture) => {

@@ -28,5 +28,10 @@ export default class Navigation {
     if (template === 'about') {
       this.links[0].style.pointerEvents = null
     }
+    if (template === 'case') {
+      this.links.forEach((link) => {
+        link.style.pointerEvents = null
+      })
+    }
   }
 }

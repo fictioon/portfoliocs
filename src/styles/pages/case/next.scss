@@ -1,0 +1,59 @@
+.case__next__section {
+  padding: 15rem 8rem;
+
+  @include media('<tablet') {
+    padding: 15rem 5rem;
+  }
+
+  .case__next__section__wrapper {
+    .next__section__link {
+      font-size: 10rem;
+      font-family: $font-italiana;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      &:hover > .next__section__link__line {
+        width: 55%;
+
+        @include media('<tablet') {
+          width: 10rem;
+        }
+      }
+
+      &:hover > .next__section__link__info > .next__section__link__text {
+        color: $color-blue;
+      }
+
+      @include media('<tablet') {
+        font-size: 8rem;
+      }
+
+      .next__section__link__info {
+        .next__section__link__case {
+          font-size: 4rem;
+          font-family: $font-ubuntu;
+          text-align: right;
+          text-transform: uppercase;
+        }
+      }
+
+      .next__section__link__line {
+        width: 60%;
+        height: 1px;
+        background: $color-gray-white;
+        margin-right: 5rem;
+        transition: width 0.3s ease-in-out;
+
+        @include media('<tablet') {
+          width: 14rem;
+          margin-right: 2rem;
+        }
+      }
+
+      .next__section__link__text {
+        transition: color 0.3s ease-in-out;
+      }
+    }
+  }
+}

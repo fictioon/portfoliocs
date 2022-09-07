@@ -1,0 +1,16 @@
+.case__header {
+  padding-top: 15rem;
+
+  .case__header__wrapper {
+    .case__title {
+      font-size: 20rem;
+      font-family: $font-italiana;
+      text-align: center;
+      mix-blend-mode: difference;
+
+      @include media('<tablet') {
+        font-size: 10rem;
+      }
+    }
+  }
+}

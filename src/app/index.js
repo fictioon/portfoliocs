@@ -1,4 +1,4 @@
-import Router from '../Router'
+import Router from '../routing/Router'
 
 import NormalizeWheel from 'normalize-wheel'
 import each from 'lodash/each'
@@ -9,6 +9,7 @@ import loadPageView from '../views/partials/LoadPage'
 
 import homeView from '../views/pages/Home'
 import aboutView from '../views/pages/About'
+import CaseView from '../views/pages/CaseView'
 
 import Time from './utils/Time'
 import Sizes from './utils/Sizes'
@@ -21,6 +22,7 @@ import LoadPage from './components/LoadPage'
 
 import Home from './pages/Home'
 import About from './pages/About'
+import Case from './pages/Case'
 
 class App {
   constructor() {
@@ -47,60 +49,55 @@ class App {
   }
 
   createRoutes() {
-    this.routes = [
-      {
-        path: '',
-        action: () => {
-          this.createContent({ template: 'home' })
-        }
+    this.routes = {
+      '/': {
+        action: () => this.createContent({ template: 'home' })
       },
-      {
-        path: 'acerca-de-mi',
-        action: () => {
-          this.createContent({ template: 'about' })
-        }
+      '/acerca-de-mi': {
+        action: () => this.createContent({ template: 'about' })
+      },
+      '/caso/:id': {
+        action: () => this.createContent({ template: 'case' })
       }
-    ]
-
+    }
     this.router = new Router(this.routes)
   }
 
   async createPartials() {
-    this.partials = [
-      {
-        name: 'preloader',
-        view: preloaderView
-      },
-      {
-        name: 'navigation',
-        view: navigationView
-      },
-      {
-        name: 'loadpage',
-        view: loadPageView
-      }
-    ]
+    this.partials = {
+      preloader: preloaderView,
+      navigation: navigationView,
+      loadpage: loadPageView
+    }
 
-    await each(this.partials, (partial) => {
-      const html = partial.view
-      const content = document.querySelector(`.${partial.name}`)
+    for (const partial in this.partials) {
+      const html = this.partials[partial]
+      const content = document.querySelector(`.${partial}`)
       content.innerHTML = html
-    })
+    }
   }
 
   async createContent({ template }) {
     this.template = template
+    let html = ''
 
     this.views = {
       home: homeView,
       about: aboutView
     }
 
-    const html = await this.views[this.template]
+    if (template === 'case') {
+      this.case = new CaseView()
+      this.case.getData()
+      html = this.case.html
+    } else {
+      html = await this.views[this.template]
+    }
 
     this.content = document.querySelector('.content')
     this.content.innerHTML = html
 
+    this.addLinkListeners()
     this.createPage()
   }
 
@@ -127,6 +124,10 @@ class App {
 
     if (this.template === 'about') {
       this.page = new About()
+    }
+
+    if (this.template === 'case') {
+      this.page = new Case()
     }
   }
 

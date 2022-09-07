@@ -1,0 +1,124 @@
+.case__section {
+  .case__section__wrapper {
+    display: flex;
+
+    @include media('<tablet') {
+      flex-direction: column-reverse;
+    }
+
+    .case__left {
+      width: 40%;
+      padding: 0 8rem;
+
+      @include media('<tablet') {
+        width: 100%;
+        padding: 0 5rem;
+      }
+
+      .case__left__wrapper {
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        @include media('<tablet') {
+        }
+
+        .case__left__info {
+          display: flex;
+          flex-direction: column;
+          gap: 10rem;
+
+          .case__left__title {
+            font-size: 10rem;
+            font-family: $font-italiana;
+          }
+          .case__left__text {
+            color: $color-gray-medium;
+            font-size: 2.5rem;
+            line-height: 1.8;
+            letter-spacing: 0.3rem;
+          }
+          .case__left__items {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+
+            .case__left__item {
+              display: flex;
+
+              .case__left__item__title {
+                font-size: 2.5rem;
+                color: $color-blue;
+                text-transform: uppercase;
+                width: 20rem;
+                text-align: right;
+                margin-right: 6.4rem;
+                margin-top: 1rem;
+              }
+              .case__left__item__text {
+                font-size: 4rem;
+                text-transform: uppercase;
+                display: flex;
+                flex-direction: column;
+                line-height: 1.5;
+                letter-spacing: 0.5rem;
+              }
+            }
+          }
+        }
+        .case__left__link {
+          font-size: 4rem;
+          text-transform: uppercase;
+          font-family: $font-italiana;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          margin-bottom: 10rem;
+          align-self: flex-start;
+
+          @include media('<tablet') {
+            align-self: center;
+            margin-bottom: 0;
+          }
+        }
+        .case__left__abstract__media {
+          align-self: center;
+          margin: 8rem 0;
+
+          .case__left__abstract__image {
+            width: 30rem;
+
+            @include media('<tablet') {
+              width: 20rem;
+            }
+          }
+        }
+      }
+    }
+    .case__right {
+      width: 60%;
+      margin-top: -8rem;
+      padding: 0 8rem;
+
+      @include media('<tablet') {
+        width: 100%;
+        margin-top: -4rem;
+        padding: 0 5rem;
+      }
+
+      .case__right__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        .case__right__media {
+          .case__right__image {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

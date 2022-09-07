@@ -8,6 +8,7 @@ import Renderer from './elements/Renderer'
 
 import Home from './pages/Home'
 import About from './pages/About'
+import Case from './pages/Case'
 
 let instance = null
 
@@ -42,6 +43,10 @@ export default class Experience {
     this.about = new About()
   }
 
+  createCase() {
+    this.case = new Case()
+  }
+
   loaded() {
     this.changeEnd(this.template)
   }
@@ -49,13 +54,16 @@ export default class Experience {
   changeStart() {}
 
   changeEnd(template) {
+    this.destroy(this.scene)
+
     if (template === 'home') {
-      this.destroy()
       this.createHome()
     }
     if (template === 'about') {
-      this.destroy()
       this.createAbout()
+    }
+    if (template === 'case') {
+      this.createCase()
     }
   }
 
@@ -68,6 +76,9 @@ export default class Experience {
     }
     if (this.about) {
       this.about.resize()
+    }
+    if (this.case) {
+      this.case.resize()
     }
   }
 
@@ -84,24 +95,50 @@ export default class Experience {
       this.about.update()
       this.about.scroll = this.scroll
     }
+    if (this.case) {
+      this.case.update()
+      this.case.scroll = this.scroll
+    }
   }
 
-  destroy() {
-    this.scene.traverse((child) => {
-      if (child instanceof THREE.Mesh) {
-        child.geometry.dispose()
+  destroy(obj) {
+    while (obj.children.length > 0) {
+      this.destroy(obj.children[0])
+      obj.remove(obj.children[0])
+    }
+    if (obj.geometry) obj.geometry.dispose()
 
-        for (const key in child.material) {
-          const value = child.material[key]
+    if (obj.material) {
+      //in case of map, bumpMap, normalMap, envMap ...
+      Object.keys(obj.material).forEach((prop) => {
+        if (!obj.material[prop]) return
+        if (
+          obj.material[prop] !== null &&
+          typeof obj.material[prop].dispose === 'function'
+        )
+          obj.material[prop].dispose()
+      })
+      obj.material.dispose()
+    }
+    // this.scene.traverse((child) => {
+    //   if (child instanceof THREE.Mesh) {
+    //     console.log('mesh')
+    //     child.geometry.dispose()
+    //     for (const key in child.material) {
+    //       const value = child.material[key]
+    //       if (value && typeof value.dispose === 'function') {
+    //         value.dispose()
+    //       }
+    //     }
+    //   }
+    // })
 
-          if (value && typeof value.dispose === 'function') {
-            value.dispose()
-          }
-        }
-      }
-    })
+    // console.log('---')
+    // this.renderer.instance.renderLists.dispose()
+    // this.renderer.instance.dispose()
 
-    this.renderer.instance.renderLists.dispose()
-    this.renderer.instance.dispose()
+    // if (this.case) {
+    //   this.case.destroy()
+    // }
   }
 }
