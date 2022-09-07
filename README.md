@@ -35,5 +35,5 @@ npm run dev
 
 # License
 
-This project is protected under the license [MIT](/LICENSE) <br/>
+This project is protected under the license [MIT](/LICENSE.md) <br/>
 [Cristian Sáenz](https://www.cristiansaenz.com) 2022
