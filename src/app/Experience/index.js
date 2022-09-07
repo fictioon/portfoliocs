@@ -120,25 +120,5 @@ export default class Experience {
       })
       obj.material.dispose()
     }
-    // this.scene.traverse((child) => {
-    //   if (child instanceof THREE.Mesh) {
-    //     console.log('mesh')
-    //     child.geometry.dispose()
-    //     for (const key in child.material) {
-    //       const value = child.material[key]
-    //       if (value && typeof value.dispose === 'function') {
-    //         value.dispose()
-    //       }
-    //     }
-    //   }
-    // })
-
-    // console.log('---')
-    // this.renderer.instance.renderLists.dispose()
-    // this.renderer.instance.dispose()
-
-    // if (this.case) {
-    //   this.case.destroy()
-    // }
   }
 }
