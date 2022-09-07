@@ -103,9 +103,13 @@ export default class CaseView {
                           src="${starImg}"
                         />
                       </figure>
-                      <a class="case__left__link word__link" href="">
+                      ${
+                        this.content.visit
+                          ? `<a class="case__left__link word__link" target="_blank" href="${this.content.visit}">
                         Visitar el sitio ->
-                      </a>
+                      </a>`
+                          : ''
+                      }
                     </div>
                   </div>
                   <div class="case__right">

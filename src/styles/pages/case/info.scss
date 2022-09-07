@@ -23,6 +23,7 @@
         height: 100%;
 
         @include media('<tablet') {
+          margin-top: 7rem;
         }
 
         .case__left__info {
@@ -30,9 +31,17 @@
           flex-direction: column;
           gap: 10rem;
 
+          @include media('<tablet') {
+            gap: 7rem;
+          }
+
           .case__left__title {
             font-size: 10rem;
             font-family: $font-italiana;
+
+            @include media('<tablet') {
+              font-size: 7rem;
+            }
           }
           .case__left__text {
             color: $color-gray-medium;

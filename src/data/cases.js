@@ -24,7 +24,8 @@ const cases = {
     techs: ['NuxtJS', 'Strapi'],
     images: [ecuatraveling1, ecuatraveling2, ecuatraveling3, ecuatraveling4],
     ids: [6, 7, 8, 9],
-    url: 'ecuatraveling'
+    url: 'ecuatraveling',
+    visit: null
   },
   pencil: {
     id: 1,
@@ -36,7 +37,8 @@ const cases = {
     techs: ['ReactJS'],
     images: [pencil1, pencil2, pencil3, pencil4],
     ids: [10, 11, 12, 13],
-    url: 'pencil'
+    url: 'pencil',
+    visit: null
   },
   zinetikan: {
     id: 2,
@@ -48,7 +50,8 @@ const cases = {
     techs: ['ReactJS'],
     images: [zinetikan1, zinetikan2, zinetikan3, zinetikan4],
     ids: [14, 15, 16, 17],
-    url: 'zinetikan'
+    url: 'zinetikan',
+    visit: 'https://zinetikan.com/'
   }
 }
 
