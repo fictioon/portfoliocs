@@ -145,21 +145,21 @@ export default class Page {
   touchDown(event) {
     this.touch.touchDown(event)
     this.scroll.touchDown()
-    if (this.home) {
+    if (this.cases) {
       this.mouse.touchDown()
     }
   }
   touchMove(event) {
     this.touch.touchMove(event)
     this.scroll.touchMove(this.touch.y.distance)
-    if (this.home) {
+    if (this.cases) {
       this.mouse.touchMove(this.touch.x.distance)
     }
   }
   touchUp(event) {
     this.touch.touchUp(event)
     this.scroll.touchUp()
-    if (this.home) {
+    if (this.cases) {
       this.mouse.touchUp()
     }
   }
