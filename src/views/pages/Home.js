@@ -85,7 +85,7 @@ const homeView = () => {
                     Un desarrollador que entiende el diseño hace la diferencia al incorporar tu marca en un entorno web.
                   </p>
                   <p class="section__principal paragraph__inner">
-                    Gráficos en movimiento, experiencias inusuales, mueven el corazon de los usuarios.
+                    Gráficos en movimiento, experiencias inusuales, mueven el corazón de los usuarios.
                   </p>
                   <p class="section__principal paragraph__inner">
                     Un sitio web es más que transmitir información, haz que tu marca sea especial.
