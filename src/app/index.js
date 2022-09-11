@@ -9,6 +9,8 @@ import loadPageView from '../views/partials/LoadPage'
 
 import homeView from '../views/pages/Home'
 import aboutView from '../views/pages/About'
+import HomeView from '../views/pages/HomeView'
+import AboutView from '../views/pages/AboutView'
 import CaseView from '../views/pages/CaseView'
 
 import Time from './utils/Time'
@@ -82,17 +84,13 @@ class App {
     let html = ''
 
     this.views = {
-      home: homeView,
-      about: aboutView
+      home: new HomeView(),
+      about: new AboutView(),
+      case: new CaseView()
     }
 
-    if (template === 'case') {
-      this.case = new CaseView()
-      this.case.getData()
-      html = this.case.html
-    } else {
-      html = await this.views[this.template]
-    }
+    await this.views[this.template].getData()
+    html = this.views[this.template].html
 
     this.content = document.querySelector('.content')
     this.content.innerHTML = html
