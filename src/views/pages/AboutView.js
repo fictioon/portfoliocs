@@ -48,6 +48,7 @@ export default class AboutView {
                     <div class="section__skills__devdes__item">
                       <h3 class="skill__title paragraph__inner">Diseño</h3>
                       <div class="skill__items">
+                      <div class="skill__item paragraph__inner">Figma</div>
                         <div class="skill__item paragraph__inner">Adobe XD</div>
                         <div class="skill__item paragraph__inner">
                           Photoshop
@@ -78,9 +79,9 @@ export default class AboutView {
                     </div>
                   </div>
                   <p class="section__skill__description opacity__inner">
-                    Soy una persona tranquila, un poco introvertida, amante de los videojuegos pero bastante serio y responsable al trabajar. Mi motivación es crecer como desarrollador y alegrarte el día con mis proyectos.
+                    Soy una persona tranquila &#128526;, amante de los videojuegos &#127918 y adicto al aprendizaje. Mi motivación es crecer como desarrollador y alegrarte el día con mis proyectos.
                     <br/> <br/>
-                    Nota: Javascript es lo mejor que me pudo pasar.
+                    Nota: Javascript es lo mejor que me pudo pasar. &#128155
                   </p>
                 </div>
                 <div class="section__skills__logo">
@@ -184,7 +185,7 @@ export default class AboutView {
                       Intenta aprender algo sobre
                     </div>
                     <div class="phrase__line paragraph__inner">
-                      todo y todo sobre algo.
+                      todo y&nbsp;todo sobre algo.
                     </div>
                   </h5>
                   <div class="section__moreinfo__author">

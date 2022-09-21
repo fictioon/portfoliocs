@@ -7,8 +7,6 @@ import preloaderView from '../views/partials/Preloader'
 import navigationView from '../views/partials/Navigation'
 import loadPageView from '../views/partials/LoadPage'
 
-import homeView from '../views/pages/Home'
-import aboutView from '../views/pages/About'
 import HomeView from '../views/pages/HomeView'
 import AboutView from '../views/pages/AboutView'
 import CaseView from '../views/pages/CaseView'
@@ -100,7 +98,7 @@ class App {
   }
 
   createExperience() {
-    const canvas = document.querySelector('canvas.webgl')
+    const canvas = document.querySelector('.webgl')
     this.experience = new Experience(canvas, this.template)
   }
 
