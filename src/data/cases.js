@@ -21,7 +21,7 @@ const cases = {
     text: 'Esta página actualmente esta en desarrollo, el cliente corresponde a una agencia de viajes receptiva líder en Ecuador. Tanto el concepto como el diseño de experiencia fue realizado desde cero tomando como importante la parte visual y llamativa de las fotografías, conectado así con los turistas que desean visitar Ecuador. Animaciones sencillas y un diseño contemporaneo hace que esta página denote profesionalismo y seguridad para sus clientes.',
     year: '2022',
     roles: ['Diseño', 'ux/ui', 'Front-end'],
-    techs: ['NuxtJS', 'Strapi'],
+    techs: ['NuxtJS', 'Directus', 'Tailwind'],
     images: [ecuatraveling1, ecuatraveling2, ecuatraveling3, ecuatraveling4],
     ids: [6, 7, 8, 9],
     url: 'ecuatraveling',
