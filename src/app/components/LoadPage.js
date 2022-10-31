@@ -7,16 +7,17 @@ export default class LoadPage {
 
     this.phrases = [
       'Diseñando desde 2011.',
-      'Diseño y desarrollo.',
+      'Diseño y desarrollo Web.',
       'Vivo en Quito, Ecuador.',
       'Me gusta vanilla javascript.',
       'Experiencias con ThreeJS.',
       'Desarrollo de landing pages.',
       'Disfruto del buen cine.',
       'Freelancer disponible.',
-      'Me gusta el frontend.',
+      'Desarrollo frontend.',
       'Desarrollo creativo.',
-      'Landings para agencias digitales.'
+      'Landings para agencias digitales.',
+      'Maquetación Pixel perfect.'
     ]
 
     this.createPhrase()
