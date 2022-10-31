@@ -109,7 +109,6 @@ export default class Experience {
     if (obj.geometry) obj.geometry.dispose()
 
     if (obj.material) {
-      //in case of map, bumpMap, normalMap, envMap ...
       Object.keys(obj.material).forEach((prop) => {
         if (!obj.material[prop]) return
         if (

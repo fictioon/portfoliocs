@@ -25,7 +25,7 @@ const cases = {
     images: [ecuatraveling1, ecuatraveling2, ecuatraveling3, ecuatraveling4],
     ids: [6, 7, 8, 9],
     url: 'ecuatraveling',
-    visit: null
+    visit: 'https://www.ecuatraveling.com/'
   },
   pencil: {
     id: 1,
