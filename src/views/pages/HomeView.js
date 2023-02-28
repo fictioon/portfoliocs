@@ -123,6 +123,9 @@ export default class HomeView {
             </section>
             <section class="section__cases">
           <div class="section__cases__wrapper">
+            <h2 class="section__cases__h2 title__inner">
+              Proyectos
+            </h2>
             <div class="section__cases__help">drag -></div>
             <div class="section__cases__all">
               <div class="section__cases__all__wrapper">

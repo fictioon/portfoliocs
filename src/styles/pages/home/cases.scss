@@ -11,14 +11,13 @@
   }
 
   .section__cases__h2 {
-    font-size: 30rem;
+    font-size: 20rem;
     font-family: $font-italiana;
     margin-bottom: 10rem;
-    padding-left: 8rem;
+    text-align: center;
 
     @include media('<tablet') {
-      font-size: 14rem;
-      margin-right: 5rem;
+      font-size: 12rem;
     }
   }
 
