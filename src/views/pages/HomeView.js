@@ -61,7 +61,7 @@ export default class HomeView {
               <div class="section__bio__wrapper">
                 <div class="section__bio__description">
                   <div class="section__bio__description__wrapper">
-                    <p class="section__bio__text paragraph">
+                    <p class="section__bio__text paragraph__inner">
                       Mi nombre es Cristian Sáenz, soy diseñador con más de 10 años de experiencia.
                     </p>
                     <div class="section__bio__logo">
