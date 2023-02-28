@@ -8,6 +8,7 @@
   font-size: 2rem;
   opacity: 0;
   @include media('<tablet') {
+    font-size: 3rem;
     left: auto;
     transform: translateX(0);
     width: 100%;
@@ -15,7 +16,7 @@
 }
 .adcookies__wrapper {
   background: $color-gray-white;
-  padding: 2rem 4rem;
+  padding: 3rem 4rem;
   @include media('<tablet') {
     margin: 0 5rem;
   }
@@ -31,7 +32,7 @@
     padding: 2rem 3rem;
     cursor: pointer;
     @include media('<tablet') {
-      width: 22rem;
+      width: 46rem;
     }
   }
 }
