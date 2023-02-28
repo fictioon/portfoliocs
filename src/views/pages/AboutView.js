@@ -23,7 +23,7 @@ export default class AboutView {
                 Soy diseñador de profesión con conocimientos de desarrollo interactivo, mi sede es en Ecuador.
               </h1>
               <p class="about__header__description opacity__inner">
-                Fui diseñador web por bastante tiempo hasta que conocí el desarrollo, lo combiné y es lo que soy ahora. Decidí destacar y ser diferente a los demás, las animaciones e interacciones especiales son lo mío, para mí la diferencia de 1px o 2px es importante, píxeles que los desarrolladores comunes no pueden capturar.
+                Soy diseñador desde hace mucho tiempo, recientemente conocí el desarrollo web, lo combiné, y es lo que soy ahora. Decidí destacar entre los demás con diseños innovadores y fuera de lo común a través de animaciones e interacciones especiales; para mí la diferencia de 1px o 2px es importante, píxeles que los desarrolladores comunes no pueden capturar.
               </p>
             </div>
             <div class="about__header__portrait">
@@ -73,15 +73,18 @@ export default class AboutView {
                         <div class="skill__item paragraph__inner">
                           Gsap Threejs
                         </div>
-                        <div class="skill__item paragraph__inner">GitHub</div>
                         <div class="skill__item paragraph__inner">Tailwind</div>
+                        <div class="skill__item paragraph__inner">GitHub</div>
                       </div>
                     </div>
                   </div>
                   <p class="section__skill__description opacity__inner">
-                    Soy una persona tranquila &#128526;, amante de los videojuegos &#127918 y adicto al aprendizaje. Mi motivación es crecer como desarrollador y alegrarte el día con mis proyectos.
-                    <br/> <br/>
-                    Nota: Javascript es lo mejor que me pudo pasar. &#128155
+                    <span>
+                      Soy una persona tranquila &#128526;, amante de los videojuegos &#127918 y adicto al aprendizaje. Mi motivación es crecer como desarrollador y alegrarte el día con mis proyectos.
+                    </span>
+                    <span class="section__skill__description__git">
+                      Si quieres conocer como se hizo este portfolio te dejo mi <a class="word__link" href="https://github.com/fictioon/portfoliocs" target="_blank">repositorio</a>.
+                    </span>
                   </p>
                 </div>
                 <div class="section__skills__logo">

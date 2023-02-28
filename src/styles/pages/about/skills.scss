@@ -94,10 +94,19 @@
     line-height: 1.8;
     letter-spacing: 0.3rem;
     width: 62.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 
     @include media('<tablet') {
       margin-top: 10rem;
       width: 100%;
+    }
+
+    .section__skill__description__git {
+      a {
+        color: $color-blue;
+      }
     }
   }
 }

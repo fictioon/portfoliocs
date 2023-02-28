@@ -11,8 +11,9 @@
   }
 
   .section__cases__h2 {
-    font-size: 20rem;
+    font-size: 12rem;
     font-family: $font-italiana;
+    text-transform: uppercase;
     margin-bottom: 10rem;
     text-align: center;
 
@@ -73,6 +74,13 @@
           .section__case__name {
             left: -10rem;
             top: -9rem;
+          }
+
+          .section__case__link figure {
+            transition: transform 0.3s ease-in-out;
+          }
+          .section__case__link:hover figure {
+            transform: scale(1.05);
           }
 
           .section__case__media {
