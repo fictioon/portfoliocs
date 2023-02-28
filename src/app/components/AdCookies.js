@@ -9,18 +9,20 @@ export default class AdCookies {
   }
 
   show() {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        this.click()
-      }
-    })
+    if (!localStorage.getItem('entry')) {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          this.click()
+        }
+      })
 
-    tl.to(this.adCookiesElement, {
-      opacity: 1,
-      duration: 0.5,
-      delay: 2,
-      ease: Power1.easeOut
-    })
+      tl.to(this.adCookiesElement, {
+        opacity: 1,
+        duration: 0.5,
+        delay: 2,
+        ease: Power1.easeOut
+      })
+    }
   }
 
   click() {
@@ -33,6 +35,7 @@ export default class AdCookies {
     const tl = gsap.timeline({
       onComplete: () => {
         this.adCookiesElement.remove()
+        localStorage.setItem('entry', 1)
       }
     })
 
