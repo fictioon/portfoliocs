@@ -1,0 +1,37 @@
+.adcookies {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: z('adcookies');
+  color: $color-gray-black;
+  font-size: 2rem;
+  opacity: 0;
+  @include media('<tablet') {
+    left: auto;
+    transform: translateX(0);
+    width: 100%;
+  }
+}
+.adcookies__wrapper {
+  background: $color-gray-white;
+  padding: 2rem 4rem;
+  @include media('<tablet') {
+    margin: 0 5rem;
+  }
+}
+.adcookies__info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  .adcookies__button {
+    background: $color-gray-black;
+    color: $color-gray-white;
+    padding: 2rem 3rem;
+    cursor: pointer;
+    @include media('<tablet') {
+      width: 22rem;
+    }
+  }
+}

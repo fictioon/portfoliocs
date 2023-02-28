@@ -6,6 +6,7 @@ import each from 'lodash/each'
 import preloaderView from '../views/partials/Preloader'
 import navigationView from '../views/partials/Navigation'
 import loadPageView from '../views/partials/LoadPage'
+import adCookiesView from '../views/partials/AdCookies'
 
 import HomeView from '../views/pages/HomeView'
 import AboutView from '../views/pages/AboutView'
@@ -19,6 +20,7 @@ import Experience from './Experience'
 import Preloader from './components/Preloader'
 import Navigation from './components/Navigation'
 import LoadPage from './components/LoadPage'
+import AdCookies from './components/AdCookies'
 
 import Home from './pages/Home'
 import About from './pages/About'
@@ -67,7 +69,8 @@ class App {
     this.partials = {
       preloader: preloaderView,
       navigation: navigationView,
-      loadpage: loadPageView
+      loadpage: loadPageView,
+      adcookies: adCookiesView
     }
 
     for (const partial in this.partials) {
@@ -104,13 +107,22 @@ class App {
 
   createPreloader() {
     this.preloader = new Preloader()
-    this.preloader.once('completed', this.loaded.bind(this))
+    this.preloader.once('completed', () => {
+      this.loaded()
+      this.createAdCookies()
+    })
+
+    this.createAdCookies()
   }
 
   createNavigation() {
     this.navigation = new Navigation({
       template: this.template
     })
+  }
+
+  createAdCookies() {
+    this.adcookies = new AdCookies()
   }
 
   createPage() {
