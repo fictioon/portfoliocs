@@ -190,7 +190,7 @@ export default class CaseView {
                     <a class="word__link" href="mailto:cristianmsaenza@gmail.com">Email</a>
                   </li>
                 </ul>
-                <div class="footer__copy">©2022</div>
+                <div class="footer__copy">©2023</div>
               </div>
             </div>
           </footer>
